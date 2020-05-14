@@ -5,6 +5,8 @@ VisualStudioVersion = 16.0.30002.166
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ProyectoVerticalFarmsModel", "ProyectoVerticalFarmsModel\ProyectoVerticalFarmsModel.vcxproj", "{10EBEFF9-8BD2-4B56-9F0D-B169DB78FB46}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ProyectoVerticalFarmsView", "ProyectoVerticalFarmsView\ProyectoVerticalFarmsView.vcxproj", "{A01A9754-089F-4CF1-8AC8-01BF56453B00}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -21,6 +23,14 @@ Global
 		{10EBEFF9-8BD2-4B56-9F0D-B169DB78FB46}.Release|x64.Build.0 = Release|x64
 		{10EBEFF9-8BD2-4B56-9F0D-B169DB78FB46}.Release|x86.ActiveCfg = Release|Win32
 		{10EBEFF9-8BD2-4B56-9F0D-B169DB78FB46}.Release|x86.Build.0 = Release|Win32
+		{A01A9754-089F-4CF1-8AC8-01BF56453B00}.Debug|x64.ActiveCfg = Debug|x64
+		{A01A9754-089F-4CF1-8AC8-01BF56453B00}.Debug|x64.Build.0 = Debug|x64
+		{A01A9754-089F-4CF1-8AC8-01BF56453B00}.Debug|x86.ActiveCfg = Debug|Win32
+		{A01A9754-089F-4CF1-8AC8-01BF56453B00}.Debug|x86.Build.0 = Debug|Win32
+		{A01A9754-089F-4CF1-8AC8-01BF56453B00}.Release|x64.ActiveCfg = Release|x64
+		{A01A9754-089F-4CF1-8AC8-01BF56453B00}.Release|x64.Build.0 = Release|x64
+		{A01A9754-089F-4CF1-8AC8-01BF56453B00}.Release|x86.ActiveCfg = Release|Win32
+		{A01A9754-089F-4CF1-8AC8-01BF56453B00}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
