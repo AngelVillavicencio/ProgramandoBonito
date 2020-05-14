@@ -1,16 +1,19 @@
 #include "CamaraCrecimiento.h"
-#include "Accion.h"
+#include "Controladores.h"
+
+
 
 using namespace ProyectoVerticalFarmsModel;
 using namespace System::Collections::Generic;
-CamaraCrecimiento::CamaraCrecimiento(String^ identificador, String^ tipoVegetal, String^ etapa, bool estadoAutomatico, String^ informacionCrecimiento) 
+CamaraCrecimiento::CamaraCrecimiento(int idStation,int idCamara, String^ tipoVegetal, String^ etapa, bool estadoAutomatico)
 {
-	this->identificador = identificador;
+	this->idStation = idStation;
+	this->idCamara = idCamara;
 	this->tipoVegetal = tipoVegetal;
 	this->etapa = etapa;
 	this->estadoAutomatico = estadoAutomatico;
-	this->informacionCrecimiento = informacionCrecimiento;
+	this->informacionParaCrecimiento = gcnew Wiki() ;
 	this->parametros = gcnew Parametros();
-	this->proceso = gcnew List<Accion^>;
+	this->proceso= gcnew List<String^>;
 
 }

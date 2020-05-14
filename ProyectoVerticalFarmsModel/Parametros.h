@@ -11,6 +11,7 @@ namespace ProyectoVerticalFarmModel {
 		float oxigeno;
 		float co2;
 		float tiempo;
+
 	public:
 
 		Parametros();

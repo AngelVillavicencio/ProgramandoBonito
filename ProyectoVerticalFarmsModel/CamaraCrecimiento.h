@@ -1,24 +1,27 @@
 #pragma once
 using namespace System;
 #include "Parametros.h"
-#include "Accion.h"
-using namespace ProyectoVerticalFarmModel;
-using namespace System::Collections::Generic;
+#include "Controladores.h"
+#include "Wiki.h"
+
 
 namespace ProyectoVerticalFarmsModel {
-
+	using namespace ProyectoVerticalFarmModel;
+	using namespace System::Collections::Generic;
 	public ref class CamaraCrecimiento
 	{
 	private:
-		String^ identificador;
+		int idStation;
+		int idCamara;
 		String^ tipoVegetal;
 		String^ etapa;
 		bool estadoAutomatico;
-		String^ informacionCrecimiento;
+		Wiki^ informacionParaCrecimiento;
 		Parametros^ parametros;
-		List<Accion^>^ proceso;
+		List<String^>^ proceso;
+		
 	public:
-		CamaraCrecimiento(String^ identificador, String^ tipoVegetal, String^ etapa, bool estadoAutomatico, String^ informacionCrecimiento);
+		CamaraCrecimiento(int  idStation ,int idCamara, String^ tipoVegetal, String^ etapa, bool estadoAutomatico);
 		
 	};
 

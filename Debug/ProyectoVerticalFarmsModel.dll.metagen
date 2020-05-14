@@ -5,9 +5,45 @@ Assembly mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934
 	hash=None, flags=None
 Assembly System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
 	hash=None, flags=None
+Class ProyectoVerticalFarmsModel.Usuario: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+Class ProyectoVerticalFarmsModel.Encargado: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :ProyectoVerticalFarmsModel.Usuario
+    Void .ctor(System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, Int32): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+Class ProyectoVerticalFarmsModel.Administrador: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :ProyectoVerticalFarmsModel.Usuario
+    Void .ctor(System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, Int32): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+Class ProyectoVerticalFarmsModel.Controladores: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(Boolean, System.String, Int32, Int32, Int32): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
 Class ProyectoVerticalFarmModel.Parametros: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
   Methods:
     ActualizarParametros(Single, Single, Single, Single, Single, Single): PrivateScope, Public, HideBySig
+Class ProyectoVerticalFarmsModel.Wiki: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(System.String, Single, Single, Single, Single, Single, Single, Single): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    System.String tipoVegetal : Public
+    Single temperaturaAdecuada : Public
+    Single tiempoIluminacion : Public
+    Single tiempoRegadoAgua : Public
+    Single cantidadHumedad : Public
+    Single cantidadOxigeno : Public
+    Single cantidadCO2 : Public
+    Single volumenNutrientes : Public
 Class ProyectoVerticalFarmsModel.CamaraCrecimiento: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
-    Void .ctor(System.String, System.String, System.String, Boolean, System.String): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(Int32, Int32, System.String, System.String, Boolean): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+Class ProyectoVerticalFarmsModel.Iluminacion: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :ProyectoVerticalFarmsModel.Controladores
+    Void .ctor(Boolean, System.String, Int32, Int32, Int32, Int32): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+Class ProyectoVerticalFarmsModel.RegadorAgua: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :ProyectoVerticalFarmsModel.Controladores
+    Void .ctor(Boolean, System.String, Int32, Int32, Int32, Single, Single): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+Class ProyectoVerticalFarmsModel.RegadorNutrientes: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :ProyectoVerticalFarmsModel.Controladores
+    Void .ctor(Boolean, System.String, Int32, Int32, Int32, Single, Single): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+Class ProyectoVerticalFarmsModel.Station: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(Int32, Int32): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+Class ProyectoVerticalFarmsModel.Ventilador: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :ProyectoVerticalFarmsModel.Controladores
+    Void .ctor(Boolean, System.String, Int32, Int32, Int32, Single): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName

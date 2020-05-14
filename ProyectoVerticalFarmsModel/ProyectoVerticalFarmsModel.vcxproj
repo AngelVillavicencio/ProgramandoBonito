@@ -112,14 +112,36 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Accion.cpp" />
+    <ClCompile Include="Administrador.cpp" />
+    <ClCompile Include="Controladores.cpp" />
     <ClCompile Include="CamaraCrecimiento.cpp" />
+    <ClCompile Include="Encargado.cpp" />
+    <ClCompile Include="Iluminacion.cpp" />
     <ClCompile Include="Parametros.cpp" />
+    <ClCompile Include="RegadorAgua.cpp" />
+    <ClCompile Include="RegadorNutrientes.cpp" />
+    <ClCompile Include="Station.cpp" />
+    <ClCompile Include="Usuario.cpp" />
+    <ClCompile Include="Ventilador.cpp" />
+    <ClCompile Include="Wiki.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Accion.h" />
+    <ClInclude Include="Administrador.h" />
+    <ClInclude Include="Controladores.h" />
     <ClInclude Include="CamaraCrecimiento.h" />
+    <ClInclude Include="Encargado.h" />
+    <ClInclude Include="Iluminacion.h" />
     <ClInclude Include="Parametros.h" />
+    <ClInclude Include="RegadorAgua.h" />
+    <ClInclude Include="RegadorNutrientes.h" />
+    <ClInclude Include="resource.h" />
+    <ClInclude Include="Station.h" />
+    <ClInclude Include="Usuario.h" />
+    <ClInclude Include="Ventilador.h" />
+    <ClInclude Include="Wiki.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="ProyectoVerticalFarmsModel.rc" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
