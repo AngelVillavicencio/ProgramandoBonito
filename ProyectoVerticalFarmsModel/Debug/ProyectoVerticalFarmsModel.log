@@ -1,6 +1,9 @@
-﻿  CamaraCrecimiento.cpp
+﻿  Administrador.cpp
+  CamaraCrecimiento.cpp
+C:\Users\ÁNGEL ARTURO\source\repos\ProyectoVerticalFarms\ProyectoVerticalFarmsModel\Station.h(13,8): error C2065: 'CamaraCrecimiento': identificador no declarado
+C:\Users\ÁNGEL ARTURO\source\repos\ProyectoVerticalFarms\ProyectoVerticalFarmsModel\Station.h(13,26): error C2059: error de sintaxis: '>'
+C:\Users\ÁNGEL ARTURO\source\repos\ProyectoVerticalFarms\ProyectoVerticalFarmsModel\Station.h(13,41): error C3699: '^': no se puede utilizar este direccionamiento indirecto en el tipo 'unknown-type'
+C:\Users\ÁNGEL ARTURO\source\repos\ProyectoVerticalFarms\ProyectoVerticalFarmsModel\Station.h(13,41): message : el compilador reemplazará '^' por '*' para continuar con el análisis
+  Encargado.cpp
   Station.cpp
-  Wiki.cpp
   Generando código...
-  Administrador.obj : se encontró un módulo MSIL; vinculación incremental deshabilitada para MSIL; ejecutando vínculo completo
-  ProyectoVerticalFarmsModel.vcxproj -> C:\Users\ÁNGEL ARTURO\source\repos\ProyectoVerticalFarms\Debug\ProyectoVerticalFarmsModel.dll

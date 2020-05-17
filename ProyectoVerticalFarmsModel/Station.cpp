@@ -1,4 +1,5 @@
 #include "Station.h"
+#include "CamaraCrecimiento.h"
 using namespace ProyectoVerticalFarmsModel;
 
 Station::Station(int idStation,int cantidadCamaras) 

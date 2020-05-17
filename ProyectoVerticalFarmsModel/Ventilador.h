@@ -11,7 +11,7 @@ namespace ProyectoVerticalFarmsModel
 		
 	
 	public:
-
+		Ventilador();
 		Ventilador(bool encendido, String^ tipoControlador, int fechaDeInicio, int horaInicio, int duracion,float velocidadVentilador);
 
 

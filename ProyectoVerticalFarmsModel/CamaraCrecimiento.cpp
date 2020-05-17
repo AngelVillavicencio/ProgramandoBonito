@@ -3,6 +3,7 @@
 
 
 
+
 using namespace ProyectoVerticalFarmsModel;
 using namespace System::Collections::Generic;
 CamaraCrecimiento::CamaraCrecimiento(int idStation,int idCamara, String^ tipoVegetal, String^ etapa, bool estadoAutomatico)
@@ -14,6 +15,11 @@ CamaraCrecimiento::CamaraCrecimiento(int idStation,int idCamara, String^ tipoVeg
 	this->estadoAutomatico = estadoAutomatico;
 	this->informacionParaCrecimiento = gcnew Wiki() ;
 	this->parametros = gcnew Parametros();
-	this->proceso= gcnew List<String^>;
+	this->regadorDeAgua = gcnew RegadorAgua();
+	this->regadorNutrientes = gcnew RegadorNutrientes();
+	this->ventilacion = gcnew Ventilador();
+	this->iluminacion = gcnew Iluminacion();
+
+	
 
 }

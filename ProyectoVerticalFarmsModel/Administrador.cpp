@@ -5,5 +5,5 @@ Administrador::Administrador(String^ nombres, String^ apellidoPaterno, String^ a
 {
 	this->idAdmin = idAdmin;
 	this->ListaEncargados= gcnew List<Encargado^>;
-	this->Estaciones = gcnew List<String^>;
+	this->Estaciones = gcnew List<Station^>;
 }

@@ -1,5 +1,6 @@
 #pragma once
 #include "Usuario.h"
+#include "Station.h"
 
 namespace ProyectoVerticalFarmsModel {
 	using namespace System;
@@ -8,7 +9,7 @@ namespace ProyectoVerticalFarmsModel {
 	{
 	private:
 		int idEncargado;
-		List<String^>^ EstacionesEncargadas;
+		List<Station^>^ EstacionesEncargadas;
 	public:
 		Encargado(String^ nombres, String^ apellidoPaterno, String^ apellidoMaterno, String^ dni, String^ correo, String^ numCelular, String^ fechaIngreso, String^ genero, String^ edad,int idEncargado);
 	};

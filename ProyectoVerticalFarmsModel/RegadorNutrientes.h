@@ -13,7 +13,7 @@ namespace ProyectoVerticalFarmsModel
 
 	public:
 		RegadorNutrientes(bool encendido, String^ tipoControlador, int fechaDeInicio, int horaInicio, int duracion, float volumenNutrientes, float velocidadSalida);
-
+		RegadorNutrientes();
 	};
 
 

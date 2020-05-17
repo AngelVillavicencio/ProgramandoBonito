@@ -11,6 +11,6 @@ namespace ProyectoVerticalFarmsModel {
 
 	public:
 		Iluminacion(bool encendido, String^ tipoControlador, int fechaDeInicio, int horaInicio, int duracion, int intensidad);
-
+		Iluminacion();
 	};
 }
