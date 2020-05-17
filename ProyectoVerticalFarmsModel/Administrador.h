@@ -8,6 +8,7 @@ namespace ProyectoVerticalFarmsModel
 	public ref class Administrador:public Usuario
 	{
 	private:
+		//Aqui van los atributos
 		int idAdmin;
 		List<Encargado^>^ ListaEncargados;
 		List<String^>^ Estaciones;
