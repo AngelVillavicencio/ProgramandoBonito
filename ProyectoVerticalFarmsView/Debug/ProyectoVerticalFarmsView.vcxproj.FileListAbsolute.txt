@@ -1,0 +1,4 @@
+C:\Users\ÁNGEL ARTURO\source\repos\MundoVegetal\ProyectoVerticalFarms\ProyectoVerticalFarmsView\Debug\ProyectoVerticalFarmsView.vcxprojAssemblyReference.cache
+C:\Users\ÁNGEL ARTURO\source\repos\MundoVegetal\ProyectoVerticalFarms\ProyectoVerticalFarmsView\Debug\ProyectoVerticalFarmsView.frmPrincipal.resources
+C:\Users\ÁNGEL ARTURO\source\repos\MundoVegetal\ProyectoVerticalFarms\ProyectoVerticalFarmsView\Debug\ProyectoVerticalFarmsView.vcxproj.GenerateResource.cache
+C:\Users\ÁNGEL ARTURO\source\repos\MundoVegetal\ProyectoVerticalFarms\ProyectoVerticalFarmsView\Debug\ProyectoVerticalFarmsView.frmPaginaPrincipal.resources
