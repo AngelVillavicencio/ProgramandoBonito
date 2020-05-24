@@ -43,12 +43,12 @@ namespace ProyectoVerticalFarmsView {
 	private: System::Windows::Forms::Button^ button1;
 	private: System::Windows::Forms::LinkLabel^ linkLabel1;
 	private: System::Windows::Forms::Panel^ panel3;
-	private: System::Windows::Forms::Button^ button2;
+
 	private: System::Windows::Forms::Label^ label3;
-	private: System::Windows::Forms::Label^ label5;
-	private: System::Windows::Forms::Label^ label4;
+
+
 	private: System::Windows::Forms::TextBox^ textBox2;
-	private: System::Windows::Forms::TextBox^ textBox1;
+
 	private: System::Windows::Forms::Label^ label6;
 	private: System::Windows::Forms::PictureBox^ minimizar;
 	private: System::Windows::Forms::PictureBox^ Agrandar;
@@ -56,6 +56,10 @@ namespace ProyectoVerticalFarmsView {
 
 	private: System::Windows::Forms::PictureBox^ buttonSalir;
 	private: System::Windows::Forms::PictureBox^ Restaurar;
+	private: System::Windows::Forms::PictureBox^ pictureBox1;
+	private: System::Windows::Forms::PictureBox^ pictureBox2;
+	private: System::Windows::Forms::TextBox^ textBox1;
+	private: System::Windows::Forms::Button^ button2;
 
 
 	private:
@@ -85,12 +89,12 @@ namespace ProyectoVerticalFarmsView {
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->linkLabel1 = (gcnew System::Windows::Forms::LinkLabel());
 			this->panel3 = (gcnew System::Windows::Forms::Panel());
-			this->label5 = (gcnew System::Windows::Forms::Label());
-			this->label4 = (gcnew System::Windows::Forms::Label());
 			this->textBox2 = (gcnew System::Windows::Forms::TextBox());
+			this->label3 = (gcnew System::Windows::Forms::Label());
+			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
+			this->pictureBox2 = (gcnew System::Windows::Forms::PictureBox());
 			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
 			this->button2 = (gcnew System::Windows::Forms::Button());
-			this->label3 = (gcnew System::Windows::Forms::Label());
 			this->barratitulo->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Restaurar))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->minimizar))->BeginInit();
@@ -98,6 +102,8 @@ namespace ProyectoVerticalFarmsView {
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->buttonSalir))->BeginInit();
 			this->panel1->SuspendLayout();
 			this->panel3->SuspendLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// barratitulo
@@ -132,11 +138,11 @@ namespace ProyectoVerticalFarmsView {
 			// label6
 			// 
 			this->label6->AutoSize = true;
-			this->label6->Font = (gcnew System::Drawing::Font(L"Arial", 15.75F, System::Drawing::FontStyle::Italic, System::Drawing::GraphicsUnit::Point,
+			this->label6->Font = (gcnew System::Drawing::Font(L"Cera Pro", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label6->Location = System::Drawing::Point(54, 1);
+			this->label6->Location = System::Drawing::Point(15, -2);
 			this->label6->Name = L"label6";
-			this->label6->Size = System::Drawing::Size(152, 24);
+			this->label6->Size = System::Drawing::Size(158, 26);
 			this->label6->TabIndex = 7;
 			this->label6->Text = L"Mundo Vegetal";
 			// 
@@ -190,51 +196,60 @@ namespace ProyectoVerticalFarmsView {
 			// 
 			// panel1
 			// 
-			this->panel1->BackColor = System::Drawing::Color::Lime;
+			this->panel1->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(204)),
+				static_cast<System::Int32>(static_cast<System::Byte>(0)));
 			this->panel1->Controls->Add(this->label2);
 			this->panel1->Controls->Add(this->button1);
 			this->panel1->Controls->Add(this->label1);
 			this->panel1->Dock = System::Windows::Forms::DockStyle::Left;
 			this->panel1->Location = System::Drawing::Point(0, 25);
 			this->panel1->Name = L"panel1";
-			this->panel1->Size = System::Drawing::Size(500, 625);
+			this->panel1->Size = System::Drawing::Size(491, 625);
 			this->panel1->TabIndex = 1;
 			// 
 			// label2
 			// 
 			this->label2->AutoSize = true;
-			this->label2->Font = (gcnew System::Drawing::Font(L"Arial", 15.75F, System::Drawing::FontStyle::Italic, System::Drawing::GraphicsUnit::Point,
+			this->label2->Font = (gcnew System::Drawing::Font(L"Cera Pro", 18, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label2->Location = System::Drawing::Point(54, 252);
+			this->label2->ForeColor = System::Drawing::Color::White;
+			this->label2->Location = System::Drawing::Point(132, 215);
 			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(407, 24);
+			this->label2->Size = System::Drawing::Size(273, 60);
 			this->label2->TabIndex = 3;
-			this->label2->Text = L"Sistema de Gestion de agricultura Vertical";
+			this->label2->Text = L"Sistema de Gestion de \r\n   agricultura Vertical";
 			this->label2->Click += gcnew System::EventHandler(this, &frmPrincipal::label2_Click);
 			// 
 			// button1
 			// 
-			this->button1->FlatAppearance->BorderColor = System::Drawing::Color::White;
-			this->button1->FlatAppearance->MouseDownBackColor = System::Drawing::Color::Lime;
-			this->button1->FlatAppearance->MouseOverBackColor = System::Drawing::Color::White;
+			this->button1->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"button1.BackgroundImage")));
+			this->button1->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
+			this->button1->FlatAppearance->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)),
+				static_cast<System::Int32>(static_cast<System::Byte>(204)), static_cast<System::Int32>(static_cast<System::Byte>(0)));
+			this->button1->FlatAppearance->MouseDownBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)),
+				static_cast<System::Int32>(static_cast<System::Byte>(204)), static_cast<System::Int32>(static_cast<System::Byte>(0)));
+			this->button1->FlatAppearance->MouseOverBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)),
+				static_cast<System::Int32>(static_cast<System::Byte>(204)), static_cast<System::Int32>(static_cast<System::Byte>(0)));
 			this->button1->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->button1->Font = (gcnew System::Drawing::Font(L"Century Gothic", 15.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->button1->Font = (gcnew System::Drawing::Font(L"Cera Pro", 14.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->button1->Location = System::Drawing::Point(157, 364);
+			this->button1->ForeColor = System::Drawing::Color::White;
+			this->button1->Location = System::Drawing::Point(183, 343);
 			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(167, 70);
+			this->button1->Size = System::Drawing::Size(180, 52);
 			this->button1->TabIndex = 6;
-			this->button1->Text = L"Registrarse";
+			this->button1->Text = L"REGISTRATE";
 			this->button1->UseVisualStyleBackColor = true;
 			// 
 			// label1
 			// 
 			this->label1->AutoSize = true;
-			this->label1->Font = (gcnew System::Drawing::Font(L"Arial Narrow", 36, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->label1->Font = (gcnew System::Drawing::Font(L"Cera Pro", 36, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
+			this->label1->ForeColor = System::Drawing::Color::White;
 			this->label1->Location = System::Drawing::Point(127, 91);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(232, 57);
+			this->label1->Size = System::Drawing::Size(292, 60);
 			this->label1->TabIndex = 2;
 			this->label1->Text = L"Bienvenido!";
 			this->label1->Click += gcnew System::EventHandler(this, &frmPrincipal::label1_Click);
@@ -242,9 +257,13 @@ namespace ProyectoVerticalFarmsView {
 			// linkLabel1
 			// 
 			this->linkLabel1->AutoSize = true;
-			this->linkLabel1->Location = System::Drawing::Point(400, 500);
+			this->linkLabel1->Font = (gcnew System::Drawing::Font(L"Cera Pro", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->linkLabel1->LinkColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(186)), static_cast<System::Int32>(static_cast<System::Byte>(186)),
+				static_cast<System::Int32>(static_cast<System::Byte>(186)));
+			this->linkLabel1->Location = System::Drawing::Point(329, 423);
 			this->linkLabel1->Name = L"linkLabel1";
-			this->linkLabel1->Size = System::Drawing::Size(131, 13);
+			this->linkLabel1->Size = System::Drawing::Size(202, 20);
 			this->linkLabel1->TabIndex = 5;
 			this->linkLabel1->TabStop = true;
 			this->linkLabel1->Text = L"¿Olvidaste tu contraseña\?";
@@ -252,79 +271,104 @@ namespace ProyectoVerticalFarmsView {
 			// panel3
 			// 
 			this->panel3->AutoSize = true;
-			this->panel3->BackColor = System::Drawing::SystemColors::ButtonHighlight;
-			this->panel3->Controls->Add(this->label5);
-			this->panel3->Controls->Add(this->label4);
-			this->panel3->Controls->Add(this->textBox2);
-			this->panel3->Controls->Add(this->textBox1);
+			this->panel3->BackColor = System::Drawing::Color::White;
 			this->panel3->Controls->Add(this->button2);
+			this->panel3->Controls->Add(this->textBox1);
+			this->panel3->Controls->Add(this->textBox2);
+			this->panel3->Controls->Add(this->pictureBox2);
+			this->panel3->Controls->Add(this->pictureBox1);
 			this->panel3->Controls->Add(this->label3);
 			this->panel3->Controls->Add(this->linkLabel1);
 			this->panel3->Dock = System::Windows::Forms::DockStyle::Fill;
-			this->panel3->Location = System::Drawing::Point(500, 25);
+			this->panel3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->panel3->Location = System::Drawing::Point(491, 25);
 			this->panel3->Name = L"panel3";
-			this->panel3->Size = System::Drawing::Size(800, 625);
+			this->panel3->Size = System::Drawing::Size(809, 625);
 			this->panel3->TabIndex = 2;
-			// 
-			// label5
-			// 
-			this->label5->AutoSize = true;
-			this->label5->Font = (gcnew System::Drawing::Font(L"Arial", 11.25F, System::Drawing::FontStyle::Italic, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->label5->Location = System::Drawing::Point(246, 260);
-			this->label5->Name = L"label5";
-			this->label5->Size = System::Drawing::Size(88, 17);
-			this->label5->TabIndex = 9;
-			this->label5->Text = L"Contraseña:";
-			// 
-			// label4
-			// 
-			this->label4->AutoSize = true;
-			this->label4->Font = (gcnew System::Drawing::Font(L"Arial", 11.25F, System::Drawing::FontStyle::Italic, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->label4->Location = System::Drawing::Point(211, 207);
-			this->label4->Name = L"label4";
-			this->label4->Size = System::Drawing::Size(123, 17);
-			this->label4->TabIndex = 7;
-			this->label4->Text = L"Ingresa tu correo:";
-			this->label4->Click += gcnew System::EventHandler(this, &frmPrincipal::label4_Click);
 			// 
 			// textBox2
 			// 
-			this->textBox2->Location = System::Drawing::Point(388, 257);
+			this->textBox2->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(232)), static_cast<System::Int32>(static_cast<System::Byte>(232)),
+				static_cast<System::Int32>(static_cast<System::Byte>(232)));
+			this->textBox2->BorderStyle = System::Windows::Forms::BorderStyle::None;
+			this->textBox2->Font = (gcnew System::Drawing::Font(L"Cera Pro", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->textBox2->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(186)), static_cast<System::Int32>(static_cast<System::Byte>(186)),
+				static_cast<System::Int32>(static_cast<System::Byte>(186)));
+			this->textBox2->Location = System::Drawing::Point(281, 282);
 			this->textBox2->Name = L"textBox2";
-			this->textBox2->Size = System::Drawing::Size(222, 20);
+			this->textBox2->Size = System::Drawing::Size(313, 21);
 			this->textBox2->TabIndex = 8;
-			// 
-			// textBox1
-			// 
-			this->textBox1->Location = System::Drawing::Point(388, 207);
-			this->textBox1->Name = L"textBox1";
-			this->textBox1->Size = System::Drawing::Size(222, 20);
-			this->textBox1->TabIndex = 7;
-			this->textBox1->MouseEnter += gcnew System::EventHandler(this, &frmPrincipal::textBox1_MouseEnter);
-			this->textBox1->MouseLeave += gcnew System::EventHandler(this, &frmPrincipal::textBox1_MouseLeave);
-			// 
-			// button2
-			// 
-			this->button2->Location = System::Drawing::Point(457, 324);
-			this->button2->Name = L"button2";
-			this->button2->Size = System::Drawing::Size(75, 23);
-			this->button2->TabIndex = 7;
-			this->button2->Text = L"Ingresar";
-			this->button2->UseVisualStyleBackColor = true;
-			this->button2->Click += gcnew System::EventHandler(this, &frmPrincipal::button2_Click);
+			this->textBox2->Text = L"Contraseña";
 			// 
 			// label3
 			// 
 			this->label3->AutoSize = true;
-			this->label3->Font = (gcnew System::Drawing::Font(L"Arial Narrow", 36, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->label3->Font = (gcnew System::Drawing::Font(L"Cera Pro", 27.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label3->Location = System::Drawing::Point(257, 91);
+			this->label3->ForeColor = System::Drawing::Color::DarkTurquoise;
+			this->label3->Location = System::Drawing::Point(241, 122);
 			this->label3->Name = L"label3";
-			this->label3->Size = System::Drawing::Size(353, 57);
+			this->label3->Size = System::Drawing::Size(353, 47);
 			this->label3->TabIndex = 4;
-			this->label3->Text = L"Ingresa tu usuario:";
+			this->label3->Text = L"Ingresa a tu cuenta";
+			this->label3->Click += gcnew System::EventHandler(this, &frmPrincipal::label3_Click);
+			// 
+			// pictureBox1
+			// 
+			this->pictureBox1->BackColor = System::Drawing::Color::White;
+			this->pictureBox1->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox1.BackgroundImage")));
+			this->pictureBox1->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
+			this->pictureBox1->Location = System::Drawing::Point(244, 200);
+			this->pictureBox1->Name = L"pictureBox1";
+			this->pictureBox1->Size = System::Drawing::Size(366, 51);
+			this->pictureBox1->TabIndex = 10;
+			this->pictureBox1->TabStop = false;
+			this->pictureBox1->Click += gcnew System::EventHandler(this, &frmPrincipal::pictureBox1_Click_1);
+			// 
+			// pictureBox2
+			// 
+			this->pictureBox2->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox2.BackgroundImage")));
+			this->pictureBox2->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
+			this->pictureBox2->Location = System::Drawing::Point(244, 268);
+			this->pictureBox2->Name = L"pictureBox2";
+			this->pictureBox2->Size = System::Drawing::Size(366, 50);
+			this->pictureBox2->TabIndex = 11;
+			this->pictureBox2->TabStop = false;
+			// 
+			// textBox1
+			// 
+			this->textBox1->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(232)), static_cast<System::Int32>(static_cast<System::Byte>(232)),
+				static_cast<System::Int32>(static_cast<System::Byte>(232)));
+			this->textBox1->BorderStyle = System::Windows::Forms::BorderStyle::None;
+			this->textBox1->Font = (gcnew System::Drawing::Font(L"Cera Pro", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->textBox1->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(186)), static_cast<System::Int32>(static_cast<System::Byte>(186)),
+				static_cast<System::Int32>(static_cast<System::Byte>(186)));
+			this->textBox1->Location = System::Drawing::Point(281, 215);
+			this->textBox1->Name = L"textBox1";
+			this->textBox1->Size = System::Drawing::Size(313, 21);
+			this->textBox1->TabIndex = 12;
+			this->textBox1->Text = L"Nombre de usuario";
+			// 
+			// button2
+			// 
+			this->button2->BackColor = System::Drawing::Color::White;
+			this->button2->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"button2.BackgroundImage")));
+			this->button2->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
+			this->button2->FlatAppearance->BorderColor = System::Drawing::Color::White;
+			this->button2->FlatAppearance->MouseOverBackColor = System::Drawing::Color::White;
+			this->button2->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->button2->Font = (gcnew System::Drawing::Font(L"Cera Pro", 14.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->button2->ForeColor = System::Drawing::Color::White;
+			this->button2->Location = System::Drawing::Point(333, 343);
+			this->button2->Name = L"button2";
+			this->button2->Size = System::Drawing::Size(207, 52);
+			this->button2->TabIndex = 13;
+			this->button2->Text = L"INGRESAR";
+			this->button2->UseVisualStyleBackColor = false;
 			// 
 			// frmPrincipal
 			// 
@@ -348,6 +392,8 @@ namespace ProyectoVerticalFarmsView {
 			this->panel1->PerformLayout();
 			this->panel3->ResumeLayout(false);
 			this->panel3->PerformLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->EndInit();
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
@@ -414,6 +460,12 @@ private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e
 	PaginaPrincipalMenu->Show();
 
 
+}
+private: System::Void label3_Click(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void pictureBox1_Click_1(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void textBox1_TextChanged(System::Object^ sender, System::EventArgs^ e) {
 }
 };
 }

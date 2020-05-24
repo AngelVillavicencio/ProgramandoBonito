@@ -1,12 +1,1 @@
-﻿  CamaraCrecimiento.cpp
-  Estacion.cpp
-  Iluminacion.cpp
-  Necesidad.cpp
-  Parametros.cpp
-  TareaRealizada.cpp
-  Usuario.cpp
-  Wiki.cpp
-  .NETFramework,Version=v4.7.1.AssemblyAttributes.cpp
-  Generando código...
-  CamaraCrecimiento.obj : se encontró un módulo MSIL; vinculación incremental deshabilitada para MSIL; ejecutando vínculo completo
-  ProyectoVerticalFarmsModel.vcxproj -> C:\Users\ÁNGEL ARTURO\source\repos\MundoVegetal\ProyectoVerticalFarms\Debug\ProyectoVerticalFarmsModel.dll
+﻿C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Current\Bin\Microsoft.Common.CurrentVersion.targets(1175,5): error MSB3644: The reference assemblies for .NETFramework,Version=v4.7.1 were not found. To resolve this, install the Developer Pack (SDK/Targeting Pack) for this framework version or retarget your application. You can download .NET Framework Developer Packs at https://aka.ms/msbuild/developerpacks
