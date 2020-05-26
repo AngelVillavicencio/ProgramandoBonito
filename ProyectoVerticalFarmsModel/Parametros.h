@@ -1,6 +1,6 @@
 #pragma once
 
-namespace ProyectoVerticalFarmsModel
+namespace ModelProyecto
 {
 
 	public ref class Parametros
@@ -18,19 +18,15 @@ namespace ProyectoVerticalFarmsModel
 		float minuto;
 		float segundo;
 	public:
-		Parametros(float temperatura,		float humedad,
-		float intensidadLuminosa,
-		float cO2,
-		float anio,
-		float mes,
-		float dia,
-		float hora,
-		float minuto,
-		float segundo);
-
-
-
-
+		Parametros(float temperatura, float humedad,
+			float intensidadLuminosa,
+			float cO2,
+			float anio,
+			float mes,
+			float dia,
+			float hora,
+			float minuto,
+			float segundo);
 	};
 
 

@@ -1,5 +1,5 @@
 #include "Wiki.h"
-using namespace ProyectoVerticalFarmsModel;
+using namespace ModelProyecto;
 
 Wiki::Wiki()
 {

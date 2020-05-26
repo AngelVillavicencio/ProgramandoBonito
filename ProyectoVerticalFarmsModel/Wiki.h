@@ -1,12 +1,12 @@
 #pragma once
 #include "Iluminacion.h"
-namespace ProyectoVerticalFarmsModel
+namespace ModelProyecto
 {
 	using namespace System;
 	using namespace System::Collections::Generic;
 	public ref class Wiki
 	{
-	private:
+	public:
 		String^ tipoVegetal;
 		float temperaturaAdecuada;
 		Iluminacion^ iluminacion;
@@ -19,8 +19,4 @@ namespace ProyectoVerticalFarmsModel
 		Wiki(String^ tipoVegetal, float temperaturaAdecuada, Iluminacion^ iluminacion, float humedadAdecuada, float cantidadCO2, float volumenNutrientes);
 
 	};
-
-
-
 }
-

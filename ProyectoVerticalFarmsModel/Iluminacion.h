@@ -1,15 +1,16 @@
 #pragma once
-namespace ProyectoVerticalFarmsModel
+namespace ModelProyecto
 {
 	using namespace System;
 
 	public ref class Iluminacion
 	{
-	private:
+	public:
 		String^ calidad;
 		int duracion;
 	public:
-		Iluminacion(String^ calidad,int duracion);
+		Iluminacion();
+		Iluminacion(String^ calidad, int duracion);
 
 	};
 

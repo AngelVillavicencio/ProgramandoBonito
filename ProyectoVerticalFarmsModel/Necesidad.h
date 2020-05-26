@@ -1,5 +1,5 @@
 #pragma once
-namespace ProyectoVerticalFarmsModel
+namespace ModelProyecto
 {
 	public ref class Necesidad
 	{
@@ -8,7 +8,7 @@ namespace ProyectoVerticalFarmsModel
 		bool requiereTemperatura;
 		bool requiereLuz;
 	public:
-		Necesidad(bool requiereHumedad,bool requiereTemperatura,bool requiereLuzs);
+		Necesidad(bool requiereHumedad, bool requiereTemperatura, bool requiereLuzs);
 
 
 	};

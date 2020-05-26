@@ -1,6 +1,6 @@
 #include "Parametros.h"
 
-ProyectoVerticalFarmsModel::Parametros::Parametros(float temperatura, float humedad, float intensidadLuminosa, float cO2, float anio, float mes, float dia, float hora, float minuto, float segundo)
+ModelProyecto::Parametros::Parametros(float temperatura, float humedad, float intensidadLuminosa, float cO2, float anio, float mes, float dia, float hora, float minuto, float segundo)
 {
 
 	this->temperatura = 0;
