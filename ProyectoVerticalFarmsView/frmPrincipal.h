@@ -1,5 +1,6 @@
 #pragma once
 #include "frmPaginaPrincipal.h"
+#include "frmRegistroUsuario.h"
 namespace ProyectoVerticalFarmsView {
 
 	using namespace System;
@@ -19,6 +20,7 @@ namespace ProyectoVerticalFarmsView {
 		{
 			InitializeComponent();
 			//
+			this->objGestorUsuario = gcnew GestorUsuario();
 			//TODO: agregar código de constructor aquí
 			//
 		}
@@ -34,6 +36,7 @@ namespace ProyectoVerticalFarmsView {
 				delete components;
 			}
 		}
+	private: GestorUsuario^ objGestorUsuario;
 	private: System::Windows::Forms::Panel^ barratitulo;
 	protected:
 	private: System::Windows::Forms::Panel^ panel1;
@@ -60,6 +63,8 @@ namespace ProyectoVerticalFarmsView {
 	private: System::Windows::Forms::PictureBox^ pictureBox2;
 	private: System::Windows::Forms::TextBox^ textBox1;
 	private: System::Windows::Forms::Button^ button2;
+	private: System::Windows::Forms::Label^ label5;
+	private: System::Windows::Forms::Label^ label4;
 
 
 	private:
@@ -89,6 +94,8 @@ namespace ProyectoVerticalFarmsView {
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->linkLabel1 = (gcnew System::Windows::Forms::LinkLabel());
 			this->panel3 = (gcnew System::Windows::Forms::Panel());
+			this->label5 = (gcnew System::Windows::Forms::Label());
+			this->label4 = (gcnew System::Windows::Forms::Label());
 			this->button2 = (gcnew System::Windows::Forms::Button());
 			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
 			this->textBox2 = (gcnew System::Windows::Forms::TextBox());
@@ -125,11 +132,13 @@ namespace ProyectoVerticalFarmsView {
 			// Restaurar
 			// 
 			this->Restaurar->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Right));
-			this->Restaurar->BackColor = System::Drawing::Color::SaddleBrown;
+			this->Restaurar->BackColor = System::Drawing::Color::Transparent;
 			this->Restaurar->Cursor = System::Windows::Forms::Cursors::Default;
+			this->Restaurar->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"Restaurar.Image")));
 			this->Restaurar->Location = System::Drawing::Point(1241, 0);
 			this->Restaurar->Name = L"Restaurar";
 			this->Restaurar->Size = System::Drawing::Size(25, 25);
+			this->Restaurar->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
 			this->Restaurar->TabIndex = 8;
 			this->Restaurar->TabStop = false;
 			this->Restaurar->Visible = false;
@@ -149,11 +158,13 @@ namespace ProyectoVerticalFarmsView {
 			// minimizar
 			// 
 			this->minimizar->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Right));
-			this->minimizar->BackColor = System::Drawing::Color::Gray;
+			this->minimizar->BackColor = System::Drawing::Color::Transparent;
 			this->minimizar->Cursor = System::Windows::Forms::Cursors::Default;
+			this->minimizar->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"minimizar.Image")));
 			this->minimizar->Location = System::Drawing::Point(1210, 0);
 			this->minimizar->Name = L"minimizar";
 			this->minimizar->Size = System::Drawing::Size(25, 25);
+			this->minimizar->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
 			this->minimizar->TabIndex = 5;
 			this->minimizar->TabStop = false;
 			this->minimizar->Click += gcnew System::EventHandler(this, &frmPrincipal::pictureBox2_Click);
@@ -173,7 +184,7 @@ namespace ProyectoVerticalFarmsView {
 			// buttonSalir
 			// 
 			this->buttonSalir->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Right));
-			this->buttonSalir->BackColor = System::Drawing::Color::Red;
+			this->buttonSalir->BackColor = System::Drawing::Color::Transparent;
 			this->buttonSalir->Cursor = System::Windows::Forms::Cursors::Default;
 			this->buttonSalir->ErrorImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"buttonSalir.ErrorImage")));
 			this->buttonSalir->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"buttonSalir.Image")));
@@ -181,6 +192,7 @@ namespace ProyectoVerticalFarmsView {
 			this->buttonSalir->Location = System::Drawing::Point(1272, 0);
 			this->buttonSalir->Name = L"buttonSalir";
 			this->buttonSalir->Size = System::Drawing::Size(25, 25);
+			this->buttonSalir->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
 			this->buttonSalir->TabIndex = 3;
 			this->buttonSalir->TabStop = false;
 			this->buttonSalir->Click += gcnew System::EventHandler(this, &frmPrincipal::buttonSalir_Click);
@@ -240,6 +252,7 @@ namespace ProyectoVerticalFarmsView {
 			this->button1->TabIndex = 6;
 			this->button1->Text = L"REGISTRATE";
 			this->button1->UseVisualStyleBackColor = true;
+			this->button1->Click += gcnew System::EventHandler(this, &frmPrincipal::button1_Click);
 			// 
 			// label1
 			// 
@@ -272,6 +285,8 @@ namespace ProyectoVerticalFarmsView {
 			// 
 			this->panel3->AutoSize = true;
 			this->panel3->BackColor = System::Drawing::Color::White;
+			this->panel3->Controls->Add(this->label5);
+			this->panel3->Controls->Add(this->label4);
 			this->panel3->Controls->Add(this->button2);
 			this->panel3->Controls->Add(this->textBox1);
 			this->panel3->Controls->Add(this->textBox2);
@@ -280,12 +295,30 @@ namespace ProyectoVerticalFarmsView {
 			this->panel3->Controls->Add(this->label3);
 			this->panel3->Controls->Add(this->linkLabel1);
 			this->panel3->Dock = System::Windows::Forms::DockStyle::Fill;
-			this->panel3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->panel3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->panel3->Location = System::Drawing::Point(491, 25);
 			this->panel3->Name = L"panel3";
 			this->panel3->Size = System::Drawing::Size(809, 625);
 			this->panel3->TabIndex = 2;
+			// 
+			// label5
+			// 
+			this->label5->AutoSize = true;
+			this->label5->Location = System::Drawing::Point(245, 254);
+			this->label5->Name = L"label5";
+			this->label5->Size = System::Drawing::Size(64, 13);
+			this->label5->TabIndex = 15;
+			this->label5->Text = L"Contraseña:";
+			// 
+			// label4
+			// 
+			this->label4->AutoSize = true;
+			this->label4->Location = System::Drawing::Point(245, 184);
+			this->label4->Name = L"label4";
+			this->label4->Size = System::Drawing::Size(41, 13);
+			this->label4->TabIndex = 14;
+			this->label4->Text = L"Correo:";
 			// 
 			// button2
 			// 
@@ -319,7 +352,6 @@ namespace ProyectoVerticalFarmsView {
 			this->textBox1->Name = L"textBox1";
 			this->textBox1->Size = System::Drawing::Size(313, 19);
 			this->textBox1->TabIndex = 12;
-			this->textBox1->Text = L"Nombre de usuario";
 			// 
 			// textBox2
 			// 
@@ -334,7 +366,6 @@ namespace ProyectoVerticalFarmsView {
 			this->textBox2->Name = L"textBox2";
 			this->textBox2->Size = System::Drawing::Size(313, 19);
 			this->textBox2->TabIndex = 8;
-			this->textBox2->Text = L"Contraseña";
 			// 
 			// pictureBox2
 			// 
@@ -383,6 +414,7 @@ namespace ProyectoVerticalFarmsView {
 			this->Name = L"frmPrincipal";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"frmPrincipal";
+			this->Load += gcnew System::EventHandler(this, &frmPrincipal::frmPrincipal_Load);
 			this->barratitulo->ResumeLayout(false);
 			this->barratitulo->PerformLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Restaurar))->EndInit();
@@ -468,10 +500,33 @@ private: System::Void pictureBox1_Click_1(System::Object^ sender, System::EventA
 }
 private: System::Void textBox1_TextChanged(System::Object^ sender, System::EventArgs^ e) {
 }
+
 private: System::Void button2_Click_1(System::Object^ sender, System::EventArgs^ e) {
 
-	frmPaginaPrincipal^ Page = gcnew frmPaginaPrincipal();
-	Page->Show();
+	String^ correo = this->textBox1->Text;
+	String^ contrasena = this->textBox2->Text;
+	if (this->objGestorUsuario->validarUsuario(correo, contrasena)) {
+		frmPaginaPrincipal^ Page = gcnew frmPaginaPrincipal();
+		this->Hide();
+		Page->Show();
+		
+		
+	}
+	else
+	{
+		MessageBox::Show("INGRESA BIEN TU USUARIO o CONTRASEÑA");
+	}
+	
+}
+private: System::Void frmPrincipal_Load(System::Object^ sender, System::EventArgs^ e) {
+	this->objGestorUsuario->CargarUsuarios();
+}
+private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
+
+
+	frmRegistroUsuario^ PaginaRegistro = gcnew frmRegistroUsuario(this->objGestorUsuario);
+	PaginaRegistro->Show();
+
 }
 };
 }

@@ -4,6 +4,8 @@ namespace ProyectoVerticalFarmsController
 {
 	using namespace System::Collections::Generic;
 	using namespace ProyectoVerticalFarmsModel;
+	using namespace System::IO;
+	using namespace System;
 	public ref class GestorEstacion
 	{
 	private:
@@ -13,7 +15,7 @@ namespace ProyectoVerticalFarmsController
 		GestorEstacion();
 		void agregarEstacion(Estacion^ objEstacion);
 		void editarEstacion(int index, Estacion^ objEstacion);
-		void eliminarEstacion();
+		void eliminarEstacion(int indice);
 		int ObtenerCantidadDeEstaciones();
 		Estacion^ buscaEstacionXindice(int i);
 		List<Estacion^>^ EstacionesEncargadas();

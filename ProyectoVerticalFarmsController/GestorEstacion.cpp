@@ -27,15 +27,15 @@ int GestorEstacion::IndexEstacion(int id)
 }
 void GestorEstacion::editarEstacion(int index, Estacion^ objEstacion)
 {
-	/*FALTAAAAA ACÁAAA*/
+
 
 	this->listaEstaciones[index] = objEstacion;
 
 }
 
-void GestorEstacion::eliminarEstacion()
+void GestorEstacion::eliminarEstacion(int indice)
 {
-	throw gcnew System::NotImplementedException();
+	this->listaEstaciones->RemoveAt(indice);
 }
 
 int ProyectoVerticalFarmsController::GestorEstacion::ObtenerCantidadDeEstaciones()
@@ -59,10 +59,30 @@ List<Estacion^>^ GestorEstacion::EstacionesEncargadas()
 
 void GestorEstacion::GuardarDatosEstacion()
 {
-	throw gcnew System::NotImplementedException();
+	array<String^>^ lineas = gcnew array<String^>(this->listaEstaciones->Count);
+	for (int i = 0; i < this->listaEstaciones->Count; i++) {
+		Estacion^ objEstacion = this->listaEstaciones[i];
+		String^ palabras = objEstacion->getId() + "+" + objEstacion->getNombre() + "+" + objEstacion->getCantidadCamaras() + "+" + objEstacion->getEncargado() + "+" + objEstacion->getDescripcion();
+		lineas[i] = palabras;
+
+	}
+	File::WriteAllLines("Estaciones.txt",lineas);
 }
 
 void GestorEstacion::CargarDatosEstacion()
 {
-	throw gcnew System::NotImplementedException();
+	this->listaEstaciones->Clear();
+	array<String^>^ lineas = File::ReadAllLines("Estaciones.txt");
+	String^ separador = "+";
+	for each (String ^ lineaEstacion in lineas)
+	{
+		array<String^>^ palabras = lineaEstacion->Split(separador->ToCharArray());
+		int id = Convert::ToInt32(palabras[0]);
+		String^ nombre = palabras[1];
+		int cantidadCamaras = Convert::ToInt32(palabras[2]);
+		String^ encargado = palabras[3];
+		String^ descripcion = palabras[4];
+		Estacion^ objEstacion = gcnew Estacion(id,nombre,encargado,descripcion, cantidadCamaras);
+		this->listaEstaciones->Add(objEstacion);
+	}
 }
