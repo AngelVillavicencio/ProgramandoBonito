@@ -21,20 +21,28 @@ namespace ProyectoVerticalFarmsModel
 		String^ faseCrecimiento;
 		bool estadoEncendido;
 		String^ comentario;
-		List<Parametros^>^ listaParametros;
+		List<Parametros^>^ parametrosGuardados;
 		Wiki^ wiki;
-		List<Necesidad^>^ listaNecesidades;
-		List<TareaRealizada^>^ listaTareasRealizada;
+		Necesidad^ necesidades;
+		List<TareaRealizada^>^ tareasRealizadas;
 	public:
 		CamaraCrecimiento(int id,
-		int numeroPiso,
-		String^ tipoCultivo,
-		String^ faseCrecimiento,
-		bool estadoEncendido,
-		String^ comentario,
-		Wiki^ wiki);
+			int numeroPiso,
+			String^ tipoCultivo,
+			String^ faseCrecimiento,
+			bool estadoEncendido,
+			String^ comentario,
+			Wiki^ wiki,
+			Necesidad^ necesidades);
+		CamaraCrecimiento::CamaraCrecimiento(int id, int numeroPiso, String^ tipoCultivo, String^ faseCrecimiento, bool estadoEncendido, String^ comentario);
+
+		int getId();
+		int getNumeroPiso();
+		String^ getTipoCultivo();
+		String^ getFaseCrecimiento();
+		bool getEstadoEncendido();
+		String^ getComentario();
+		Wiki^ getWiki();
+		Necesidad^ getNecesidades();
 	};
-
-
-
 }
