@@ -197,6 +197,7 @@ namespace ProyectoVerticalFarmsView {
 			this->Controls->Add(this->panel1);
 			this->Name = L"frmCrearEstacion";
 			this->Text = L"frmCrearEstacion";
+			this->Load += gcnew System::EventHandler(this, &frmCrearEstacion::frmCrearEstacion_Load);
 			this->panel1->ResumeLayout(false);
 			this->panel1->PerformLayout();
 			this->ResumeLayout(false);
@@ -279,6 +280,8 @@ private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e
 	}
 	
 	
+}
+private: System::Void frmCrearEstacion_Load(System::Object^ sender, System::EventArgs^ e) {
 }
 };
 }

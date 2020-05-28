@@ -1,6 +1,7 @@
 #pragma once
 #include "frmPaginaPrincipal.h"
 #include "frmMantEstacion.h"
+#include "frmMantCamaraCrecimiento.h"
 
 namespace ProyectoVerticalFarmsView {
 	namespace Contenedores {
@@ -64,6 +65,7 @@ namespace ProyectoVerticalFarmsView {
 	private: System::Windows::Forms::Panel^ resaltado_panel1;
 
 	private: GestorEstacion^ objGestorEstacion;
+	private: GestorCamaraCrecimiento^ objGestorCamaraCrecimiento;
 	private: System::Windows::Forms::Panel^ panel7;
 	private: System::Windows::Forms::Panel^ resaltado_panel4;
 
@@ -171,6 +173,7 @@ private: System::Windows::Forms::GroupBox^ groupBox17;
 private: System::Windows::Forms::LinkLabel^ linkLabel19;
 private: System::Windows::Forms::PictureBox^ pictureBox23;
 private: System::Windows::Forms::Panel^ panel9;
+private: System::Windows::Forms::Button^ button9;
 
 
 
@@ -233,6 +236,7 @@ private: System::Windows::Forms::Panel^ panel9;
 			this->buttonSalir = (gcnew System::Windows::Forms::PictureBox());
 			this->button5 = (gcnew System::Windows::Forms::Button());
 			this->contenido_misEstaciones = (gcnew System::Windows::Forms::Panel());
+			this->button9 = (gcnew System::Windows::Forms::Button());
 			this->label3 = (gcnew System::Windows::Forms::Label());
 			this->panel6 = (gcnew System::Windows::Forms::Panel());
 			this->groupBox9 = (gcnew System::Windows::Forms::GroupBox());
@@ -687,6 +691,7 @@ private: System::Windows::Forms::Panel^ panel9;
 			// 
 			this->contenido_misEstaciones->AutoScroll = true;
 			this->contenido_misEstaciones->AutoSize = true;
+			this->contenido_misEstaciones->Controls->Add(this->button9);
 			this->contenido_misEstaciones->Controls->Add(this->label3);
 			this->contenido_misEstaciones->Controls->Add(this->panel6);
 			this->contenido_misEstaciones->Controls->Add(this->panel4);
@@ -702,6 +707,16 @@ private: System::Windows::Forms::Panel^ panel9;
 			this->contenido_misEstaciones->Size = System::Drawing::Size(1169, 939);
 			this->contenido_misEstaciones->TabIndex = 2;
 			this->contenido_misEstaciones->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &frmPaginaPrincipal::contenido_misEstaciones_Paint);
+			// 
+			// button9
+			// 
+			this->button9->Location = System::Drawing::Point(561, 119);
+			this->button9->Name = L"button9";
+			this->button9->Size = System::Drawing::Size(195, 59);
+			this->button9->TabIndex = 12;
+			this->button9->Text = L"Mantenimiento Camaras de Crecimiento";
+			this->button9->UseVisualStyleBackColor = true;
+			this->button9->Click += gcnew System::EventHandler(this, &frmPaginaPrincipal::button9_Click);
 			// 
 			// label3
 			// 
@@ -1785,6 +1800,10 @@ private: System::Void pictureBox4_Click(System::Object^ sender, System::EventArg
 	this->contenido_misEstaciones->Visible = false;
 	this->panel8->Visible = false;
 	this->panel2->Visible = true;
+}
+private: System::Void button9_Click(System::Object^ sender, System::EventArgs^ e) {
+	frmMantCamaraCrecimiento^ VentanaMantenimientoCamaraCrecimiento = gcnew frmMantCamaraCrecimiento();
+	VentanaMantenimientoCamaraCrecimiento->Show();
 }
 };
 }

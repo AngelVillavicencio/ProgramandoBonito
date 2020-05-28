@@ -4,3 +4,4 @@ darien.romero@pucp.edu.pe;darien
 jose.tarazona@pucp.edu.pe;jose
 a20167448@pucp.edu.pe;abigail
 andres.alamo@pucp.edu.pe;andres
+leo;leo

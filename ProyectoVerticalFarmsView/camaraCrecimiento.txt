@@ -1,0 +1,4 @@
+20;5;Espinaca;Media;si;Good
+25;2;Rabano;Pequenia;no;Regular
+123;12;lechuga;adulta;no;ninguno
+321;12;orquidea;media;si;ninguno
