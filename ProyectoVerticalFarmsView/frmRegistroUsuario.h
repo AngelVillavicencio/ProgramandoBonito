@@ -19,17 +19,14 @@ namespace ProyectoVerticalFarmsView {
 		frmRegistroUsuario(void)
 		{
 			InitializeComponent();
-			//
-			//TODO: agregar código de constructor aquí
-			//
+			this->objGestorUsuario = gcnew GestorUsuario();
 		}
 		frmRegistroUsuario(GestorUsuario^ objGestorUsuario)
 		{
 			InitializeComponent();
 			//
 			this->objGestorUsuario = objGestorUsuario;
-			//TODO: agregar código de constructor aquí
-			//
+			
 		}
 
 	protected:
@@ -454,7 +451,19 @@ namespace ProyectoVerticalFarmsView {
 		//llenado de datos...
 	////FALTA HACER EL REGISTRO DE DATOS Y SU VALIDACION
 		int codigo = this->objGestorUsuario->cantidadUsuarios();
+		String^ nombres = this->textBox1->Text;
+		String^ apellidoPaterno = this->textBox2->Text;
+		String^ apellidoMaterno = this->textBox3->Text;
+		String^ dni = this->textBox4->Text;
+		String^ numCelular = this->textBox5->Text;
+		String^ correo = this->textBox9->Text;
 		
+		String^ fechaIngreso = this->textBox6->Text;
+		String^ genero = this->textBox7->Text;
+		String^ anioNacimiento = this->textBox8->Text;
+		String^ contrasena = this->textBox10->Text;
+		String^ contrasenaRepetida = this->textBox11->Text;
+		String^ palabraClave = this->textBox12->Text;
 		//Es admin?
 
 		if (this->checkBox1->CheckState == CheckState::Checked) {

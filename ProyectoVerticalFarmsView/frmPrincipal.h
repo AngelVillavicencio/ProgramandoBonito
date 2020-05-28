@@ -1,6 +1,7 @@
 #pragma once
 #include "frmPaginaPrincipal.h"
 #include "frmRegistroUsuario.h"
+#include "frmRecuperarContrasena.h"
 namespace ProyectoVerticalFarmsView {
 
 	using namespace System;
@@ -280,6 +281,7 @@ namespace ProyectoVerticalFarmsView {
 			this->linkLabel1->TabIndex = 5;
 			this->linkLabel1->TabStop = true;
 			this->linkLabel1->Text = L"¿Olvidaste tu contraseña\?";
+			this->linkLabel1->LinkClicked += gcnew System::Windows::Forms::LinkLabelLinkClickedEventHandler(this, &frmPrincipal::linkLabel1_LinkClicked);
 			// 
 			// panel3
 			// 
@@ -305,20 +307,26 @@ namespace ProyectoVerticalFarmsView {
 			// label5
 			// 
 			this->label5->AutoSize = true;
-			this->label5->Location = System::Drawing::Point(245, 254);
+			this->label5->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label5->ForeColor = System::Drawing::Color::DarkTurquoise;
+			this->label5->Location = System::Drawing::Point(245, 263);
 			this->label5->Name = L"label5";
-			this->label5->Size = System::Drawing::Size(64, 13);
+			this->label5->Size = System::Drawing::Size(112, 16);
 			this->label5->TabIndex = 15;
-			this->label5->Text = L"Contraseña:";
+			this->label5->Text = L"CONTRASEÑA";
 			// 
 			// label4
 			// 
 			this->label4->AutoSize = true;
+			this->label4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label4->ForeColor = System::Drawing::Color::DarkTurquoise;
 			this->label4->Location = System::Drawing::Point(245, 184);
 			this->label4->Name = L"label4";
-			this->label4->Size = System::Drawing::Size(41, 13);
+			this->label4->Size = System::Drawing::Size(72, 16);
 			this->label4->TabIndex = 14;
-			this->label4->Text = L"Correo:";
+			this->label4->Text = L"CORREO";
 			// 
 			// button2
 			// 
@@ -362,7 +370,7 @@ namespace ProyectoVerticalFarmsView {
 				static_cast<System::Byte>(0)));
 			this->textBox2->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(186)), static_cast<System::Int32>(static_cast<System::Byte>(186)),
 				static_cast<System::Int32>(static_cast<System::Byte>(186)));
-			this->textBox2->Location = System::Drawing::Point(281, 282);
+			this->textBox2->Location = System::Drawing::Point(281, 294);
 			this->textBox2->Name = L"textBox2";
 			this->textBox2->Size = System::Drawing::Size(313, 19);
 			this->textBox2->TabIndex = 8;
@@ -371,7 +379,7 @@ namespace ProyectoVerticalFarmsView {
 			// 
 			this->pictureBox2->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox2.BackgroundImage")));
 			this->pictureBox2->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
-			this->pictureBox2->Location = System::Drawing::Point(244, 268);
+			this->pictureBox2->Location = System::Drawing::Point(244, 280);
 			this->pictureBox2->Name = L"pictureBox2";
 			this->pictureBox2->Size = System::Drawing::Size(366, 50);
 			this->pictureBox2->TabIndex = 11;
@@ -527,6 +535,10 @@ private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e
 	frmRegistroUsuario^ PaginaRegistro = gcnew frmRegistroUsuario(this->objGestorUsuario);
 	PaginaRegistro->Show();
 
+}
+private: System::Void linkLabel1_LinkClicked(System::Object^ sender, System::Windows::Forms::LinkLabelLinkClickedEventArgs^ e) {
+	frmRecuperarContrasena^ RecuperarContrasena = gcnew frmRecuperarContrasena();
+	RecuperarContrasena->Show();
 }
 };
 }
