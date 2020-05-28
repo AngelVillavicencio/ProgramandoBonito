@@ -303,6 +303,7 @@ namespace ProyectoVerticalFarmsView {
 			this->panel3->Name = L"panel3";
 			this->panel3->Size = System::Drawing::Size(809, 625);
 			this->panel3->TabIndex = 2;
+			this->panel3->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &frmPrincipal::panel3_Paint);
 			// 
 			// label5
 			// 
@@ -540,5 +541,8 @@ private: System::Void linkLabel1_LinkClicked(System::Object^ sender, System::Win
 	frmRecuperarContrasena^ RecuperarContrasena = gcnew frmRecuperarContrasena();
 	RecuperarContrasena->Show();
 }
+private: System::Void panel3_Paint(System::Object^ sender, System::Windows::Forms::PaintEventArgs^ e) {
+}
+
 };
 }

@@ -85,7 +85,7 @@ void GestorCamaraCrecimiento::cargarDatosCamaraCrecimiento()
 		int numeroPiso = Convert::ToInt32(palabras[1]);
 		String^ tipoCultivo = palabras[2];
 		String^ faseCrecimiento = palabras[3];
-		bool estadoEncendido=Convert::ToBoolean(palabras[4]);
+		String^ estadoEncendido =palabras[4];
 		String^ comentario = palabras[5];
 		//son objetos y tienes sus atributos, por lo que agregue un constructor para soportar esto
 		//Wiki^ wiki;
@@ -101,7 +101,7 @@ void GestorCamaraCrecimiento::guardarDatosCamaraCrecimiento()
 	for (int i = 0; i < this->listaCamarasCrecimientos->Count; i++)
 	{
 		CamaraCrecimiento^ objCamaraCrecimiento = this->listaCamarasCrecimientos[i];
-		String^ palabras = objCamaraCrecimiento->getId() + ";" + objCamaraCrecimiento->getNumeroPiso() + ";" + objCamaraCrecimiento->getTipoCultivo() + ";" + objCamaraCrecimiento->getFaseCrecimiento() + ";" + objCamaraCrecimiento->getTipoCultivo() + ";" + objCamaraCrecimiento->getEstadoEncendido() + ";" + objCamaraCrecimiento->getComentario();
+		String^ palabras = objCamaraCrecimiento->getId() + ";" + objCamaraCrecimiento->getNumeroPiso() + ";" + objCamaraCrecimiento->getTipoCultivo() + ";" + objCamaraCrecimiento->getFaseCrecimiento()  + ";" + objCamaraCrecimiento->getEstadoEncendido() + ";" + objCamaraCrecimiento->getComentario();
 		lineas[i] = palabras;
 	}
 	File::WriteAllLines("camaraCrecimiento.txt", lineas);

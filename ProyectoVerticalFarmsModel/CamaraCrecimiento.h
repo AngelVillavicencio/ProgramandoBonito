@@ -19,7 +19,7 @@ namespace ProyectoVerticalFarmsModel
 		int numeroPiso;
 		String^ tipoCultivo;
 		String^ faseCrecimiento;
-		bool estadoEncendido;
+		String^ estadoEncendido;
 		String^ comentario;
 		List<Parametros^>^ parametrosGuardados;
 		Wiki^ wiki;
@@ -30,17 +30,17 @@ namespace ProyectoVerticalFarmsModel
 			int numeroPiso,
 			String^ tipoCultivo,
 			String^ faseCrecimiento,
-			bool estadoEncendido,
+			String^ estadoEncendido,
 			String^ comentario,
 			Wiki^ wiki,
 			Necesidad^ necesidades);
-		CamaraCrecimiento::CamaraCrecimiento(int id, int numeroPiso, String^ tipoCultivo, String^ faseCrecimiento, bool estadoEncendido, String^ comentario);
-
+		CamaraCrecimiento(int id, int numeroPiso, String^ tipoCultivo, String^ faseCrecimiento, String^ estadoEncendido, String^ comentario);
+		CamaraCrecimiento();
 		int getId();
 		int getNumeroPiso();
 		String^ getTipoCultivo();
 		String^ getFaseCrecimiento();
-		bool getEstadoEncendido();
+		String^ getEstadoEncendido();
 		String^ getComentario();
 		Wiki^ getWiki();
 		Necesidad^ getNecesidades();

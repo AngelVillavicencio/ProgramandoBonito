@@ -270,12 +270,8 @@ private: System::Void CargarInfo(System::Object^ sender, System::EventArgs^ e) {
 			   }
 			   return num;
 		   }
-
-
 	   }
 	private: bool ValidarNombreEstacion(String^ nombre) {
-
-
 		if (nombre[0] == 'E' && nombre[1] == 's' && nombre[2] == 't' && nombre[3] == 'a' && nombre[4] == 'c' && nombre[5] == 'i' && nombre[6] == 'o' && nombre[7] == 'n') {
 			return true;
 		}
@@ -288,7 +284,6 @@ private: System::Void CargarInfo(System::Object^ sender, System::EventArgs^ e) {
 			   return true;
 		   }
 private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
-
 	if (ValidarId(this->textBox1->Text))
 	{
 		int id = Convert::ToInt32(this->textBox1->Text);
@@ -313,17 +308,11 @@ private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e
 		else {
 			MessageBox::Show("Inicie los nombres de la estacion con 'Estacion' ");
 		}
-
-
-
 	}
 	else
 	{
 		MessageBox::Show("Coloque un numero en el codigo");
 	}
-
-
-
 }
 };
 }

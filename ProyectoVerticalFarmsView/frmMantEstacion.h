@@ -10,6 +10,7 @@ namespace ProyectoVerticalFarmsView {
 	using namespace System::Data;
 	using namespace System::Drawing;
 	using namespace ProyectoVerticalFarmsController;
+	using namespace ProyectoVerticalFarmsModel;
 	/// <summary>
 	/// Resumen de frmMantEstacion
 	/// </summary>
@@ -290,15 +291,11 @@ namespace ProyectoVerticalFarmsView {
 		if (this->objGestorEstacion->ObtenerCantidadDeEstaciones() > 0) {
 			this->button3->Visible = true;
 			this->button2->Visible = true;
-
 		}
 		else {
 			this->button3->Visible = false;
 			this->button2->Visible = false;
-
 		}
-
-
 	}
 	private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e) {
 

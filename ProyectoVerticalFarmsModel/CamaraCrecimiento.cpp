@@ -1,6 +1,8 @@
 #include "CamaraCrecimiento.h"
+
 using namespace ProyectoVerticalFarmsModel;
-CamaraCrecimiento::CamaraCrecimiento(int id, int numeroPiso, String^ tipoCultivo, String^ faseCrecimiento, bool estadoEncendido, String^ comentario, Wiki^ wiki, Necesidad^ necesidades)
+
+CamaraCrecimiento::CamaraCrecimiento(int id, int numeroPiso, String^ tipoCultivo, String^ faseCrecimiento, String^ estadoEncendido, String^ comentario, Wiki^ wiki, Necesidad^ necesidades)
 {
 	this->id = id;
 	this->numeroPiso = numeroPiso;
@@ -17,7 +19,7 @@ CamaraCrecimiento::CamaraCrecimiento(int id, int numeroPiso, String^ tipoCultivo
 	this->tareasRealizadas = gcnew List<TareaRealizada^>;
 }
 
-CamaraCrecimiento::CamaraCrecimiento(int id, int numeroPiso, String^ tipoCultivo, String^ faseCrecimiento, bool estadoEncendido, String^ comentario)
+CamaraCrecimiento::CamaraCrecimiento(int id, int numeroPiso, String^ tipoCultivo, String^ faseCrecimiento, String^ estadoEncendido, String^ comentario)
 {
 	this->id = id;
 	this->numeroPiso = numeroPiso;
@@ -32,6 +34,12 @@ CamaraCrecimiento::CamaraCrecimiento(int id, int numeroPiso, String^ tipoCultivo
 	this->tareasRealizadas = gcnew List<TareaRealizada^>;
 }
 
+CamaraCrecimiento::CamaraCrecimiento()
+{
+	this->parametrosGuardados = gcnew List<Parametros^>;
+	this->tareasRealizadas = gcnew List<TareaRealizada^>;
+}
+
 int CamaraCrecimiento::getId()
 {
 	return this->id;
@@ -39,7 +47,7 @@ int CamaraCrecimiento::getId()
 
 int CamaraCrecimiento::getNumeroPiso()
 {
-	return this->id;
+	return this->numeroPiso;
 }
 
 String^ CamaraCrecimiento::getTipoCultivo()
@@ -52,7 +60,7 @@ String^ CamaraCrecimiento::getFaseCrecimiento()
 	return this->faseCrecimiento;
 }
 
-bool CamaraCrecimiento::getEstadoEncendido()
+String^ CamaraCrecimiento::getEstadoEncendido()
 {
 	return this->estadoEncendido;
 }
