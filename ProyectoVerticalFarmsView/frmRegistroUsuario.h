@@ -9,6 +9,7 @@ namespace ProyectoVerticalFarmsView {
 	using namespace System::Data;
 	using namespace System::Drawing;
 	using namespace ProyectoVerticalFarmsController;
+	using namespace ProyectoVerticalFarmsModel;
 
 	/// <summary>
 	/// Resumen de frmRegistroUsuario
@@ -447,9 +448,7 @@ namespace ProyectoVerticalFarmsView {
 	private: System::Void groupBox1_Enter(System::Object^ sender, System::EventArgs^ e) {
 	}
 	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
-
-		//llenado de datos...
-	////FALTA HACER EL REGISTRO DE DATOS Y SU VALIDACION
+		
 		int codigo = this->objGestorUsuario->cantidadUsuarios();
 		String^ nombres = this->textBox1->Text;
 		String^ apellidoPaterno = this->textBox2->Text;
@@ -464,26 +463,33 @@ namespace ProyectoVerticalFarmsView {
 		String^ contrasena = this->textBox10->Text;
 		String^ contrasenaRepetida = this->textBox11->Text;
 		String^ palabraClave = this->textBox12->Text;
-		//Es admin?
+		bool admin;
 
 		if (this->checkBox1->CheckState == CheckState::Checked) {
-			bool admin = true;
+			admin = true;
 		}
-		else if (this->checkBox2->CheckState == CheckState::Checked) {
-			bool admin = false;
+		else {
+			admin = false;
 		}
-		/*
-		
-		
-		SEGUIR EXTRAYENDO LOS DATOS
-		
-		
-		*/
-
-		// DESPUES DE HABER VALIDADO
+		Usuario^ usuario = gcnew Usuario(1,
+			nombres,
+			apellidoPaterno,
+			apellidoMaterno,
+			dni,
+			correo,
+			numCelular,
+			fechaIngreso,
+			genero,
+			anioNacimiento,
+			admin,
+			contrasena,
+			palabraClave
+			);
+		this->objGestorUsuario->listaUsuario->Add(usuario);
+		this->objGestorUsuario->guardarDatosUsuario();
 
 		MessageBox::Show("HA SIDO REGISTRADO EXITOSAMENTE");
-		///
+	
 
 	}
 };

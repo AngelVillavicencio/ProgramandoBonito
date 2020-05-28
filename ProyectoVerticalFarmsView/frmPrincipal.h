@@ -533,12 +533,12 @@ private: System::Void frmPrincipal_Load(System::Object^ sender, System::EventArg
 private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
 
 
-	frmRegistroUsuario^ PaginaRegistro = gcnew frmRegistroUsuario(this->objGestorUsuario);
+	frmRegistroUsuario^ PaginaRegistro = gcnew frmRegistroUsuario(this -> objGestorUsuario);
 	PaginaRegistro->Show();
 
 }
 private: System::Void linkLabel1_LinkClicked(System::Object^ sender, System::Windows::Forms::LinkLabelLinkClickedEventArgs^ e) {
-	frmRecuperarContrasena^ RecuperarContrasena = gcnew frmRecuperarContrasena();
+	frmRecuperarContrasena^ RecuperarContrasena = gcnew frmRecuperarContrasena(this -> objGestorUsuario);
 	RecuperarContrasena->Show();
 }
 private: System::Void panel3_Paint(System::Object^ sender, System::Windows::Forms::PaintEventArgs^ e) {

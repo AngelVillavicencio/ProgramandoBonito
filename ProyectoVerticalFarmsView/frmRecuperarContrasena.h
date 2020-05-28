@@ -8,6 +8,7 @@ namespace ProyectoVerticalFarmsView {
 	using namespace System::Windows::Forms;
 	using namespace System::Data;
 	using namespace System::Drawing;
+	using namespace ProyectoVerticalFarmsController;
 
 	/// <summary>
 	/// Summary for frmRecuperarContrasena
@@ -18,9 +19,14 @@ namespace ProyectoVerticalFarmsView {
 		frmRecuperarContrasena(void)
 		{
 			InitializeComponent();
-			//
-			//TODO: Add the constructor code here
-			//
+			this->objGestorUsuario = gcnew GestorUsuario();
+
+		}
+		frmRecuperarContrasena(GestorUsuario^ gestorUsuario)
+		{
+			InitializeComponent();
+			this->objGestorUsuario = gestorUsuario;
+
 		}
 
 	protected:
@@ -34,6 +40,7 @@ namespace ProyectoVerticalFarmsView {
 				delete components;
 			}
 		}
+	private: GestorUsuario^ objGestorUsuario;
 	private: System::Windows::Forms::Label^ label1;
 	private: System::Windows::Forms::PictureBox^ pictureBox1;
 	private: System::Windows::Forms::Label^ label4;
@@ -274,6 +281,19 @@ namespace ProyectoVerticalFarmsView {
 private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
 	String^ correo = textBox1->Text;
 	String^ nombrePadre = textBox2->Text;
+	bool registrado = false;
+	int i;
+	this->objGestorUsuario->cargarDatosUsuario();
+	int cantidadUsuariosRegistrados = this->objGestorUsuario->listaUsuario->Count;
+	for (i = 0; i < cantidadUsuariosRegistrados; i++) {
+		String^ correoLeido = this->objGestorUsuario->listaUsuario[i]->getCorreo();
+		String^ nombrePadreLeido = this->objGestorUsuario->listaUsuario[i]->getPalabraClave();
+		if (correoLeido == correo && nombrePadre == nombrePadreLeido) {
+			registrado = true;
+			break;
+		}
+	}
+	textBox3->Text = this->objGestorUsuario->listaUsuario[i]->getContrasena();
 }
 };
 }

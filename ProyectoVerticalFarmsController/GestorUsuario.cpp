@@ -74,7 +74,13 @@ void GestorUsuario::cargarDatosUsuario()
 		String^ fechaIngreso = palabras[7];
 		String^ genero = palabras[8];
 		String^ anioNacimiento = palabras[9];
-		bool esAdmin = Convert::ToBoolean(palabras[10]);
+		bool esAdmin;
+		if (palabras[10] == "True")
+			esAdmin = true;
+		else
+		{
+			esAdmin = false;
+		}
 		String^ contrasena = palabras[11];
 		String^ palabraClave = palabras[12];
 		Usuario^ objUsuario = gcnew Usuario(id, nombres, apellidoPaterno, apellidoMaterno, dni, correo, numCelular, fechaIngreso, genero, anioNacimiento, esAdmin, contrasena, palabraClave);
@@ -87,7 +93,7 @@ void GestorUsuario::guardarDatosUsuario()
 	for (int i = 0; i < this->listaUsuario->Count; i++)
 	{
 		Usuario^ objUsuario = this->listaUsuario[i];
-		String^ palabras = objUsuario->getId() + ";" + objUsuario->getNombres() + ";" + objUsuario->getApellidoPaterno() + ";" + objUsuario->getApellidoMaterno() + ";" + objUsuario->getDni() + ";" + objUsuario->getCorreo() + ";" + objUsuario->getNumCelular() + ";" + objUsuario->getApellidoPaterno() + ";" + objUsuario->getFechaIngreso() + ";" + objUsuario->getGenero() + ";" + objUsuario->getAnioNacimiento() + ";" + objUsuario->getEsAdmin()+";" +objUsuario->getContrasena()+";"+objUsuario->getPalabraClave();
+		String^ palabras = objUsuario->getId() + ";" + objUsuario->getNombres() + ";" + objUsuario->getApellidoPaterno() + ";" + objUsuario->getApellidoMaterno() + ";" + objUsuario->getDni() + ";" + objUsuario->getCorreo() + ";" + objUsuario->getNumCelular() + ";"  + objUsuario->getFechaIngreso() + ";" + objUsuario->getGenero() + ";" + objUsuario->getAnioNacimiento() + ";" + objUsuario->getEsAdmin()+";" +objUsuario->getContrasena()+";"+objUsuario->getPalabraClave();
 		lineas[i] = palabras;
 	}
 	File::WriteAllLines("usuarios.txt", lineas);

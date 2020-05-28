@@ -10,7 +10,7 @@ namespace ProyectoVerticalFarmsController
 	public ref class GestorUsuario
 	{
 
-	private:
+	public:
 		List<Usuario^>^ listaUsuario;
 	public:
 		GestorUsuario();
@@ -18,7 +18,6 @@ namespace ProyectoVerticalFarmsController
 		bool validarUsuario(String^ correo,String^ contrasena);
 		Usuario^ ObtenerUsuarioXindice(int indice);
 		int cantidadUsuarios();
-		// DESPUES BORRAMOS MI FUNCION "CargarUsuario""" ....
 		void cargarDatosUsuario();
 		void guardarDatosUsuario();
 	};
