@@ -3,26 +3,24 @@
 namespace ProyectoVerticalFarmsModel
 {
 	using namespace System;
+	using namespace System::Collections::Generic;
+
 	public ref class TareaRealizada
 	{
-	private:
-		String^ tarea;
-		float anio;
-		float mes;
-		float dia;
-		float hora;
-		float minuto;
-		float segundo;
 	public:
-		TareaRealizada(String^ tarea,
-		float anio,
-		float mes,
-		float dia,
-		float hora,
-		float minuto,
-		float segundo);
+		long temp;
+		DateTime^ fecha;
+		String^ Agua;
+		String^ Iluminacion;
+
+		String^ Ventilador;
+
+
+
+
+	public:
+		TareaRealizada(long temp, DateTime^ fecha, String^ Agua, String^ Iluminacion, String^ Ventilador);
 
 	};
-
 
 }

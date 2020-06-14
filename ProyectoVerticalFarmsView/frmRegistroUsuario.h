@@ -5,10 +5,12 @@ namespace ProyectoVerticalFarmsView {
 	using namespace System;
 	using namespace System::ComponentModel;
 	using namespace System::Collections;
+	using namespace System::Collections::Generic;
 	using namespace System::Windows::Forms;
 	using namespace System::Data;
 	using namespace System::Drawing;
 	using namespace ProyectoVerticalFarmsController;
+	using namespace ProyectoVerticalFarmsModel;
 
 	/// <summary>
 	/// Resumen de frmRegistroUsuario
@@ -19,17 +21,14 @@ namespace ProyectoVerticalFarmsView {
 		frmRegistroUsuario(void)
 		{
 			InitializeComponent();
-			//
-			//TODO: agregar código de constructor aquí
-			//
+			//this->objGestorUsuario = gcnew GestorUsuario();
 		}
 		frmRegistroUsuario(GestorUsuario^ objGestorUsuario)
 		{
 			InitializeComponent();
 			//
 			this->objGestorUsuario = objGestorUsuario;
-			//TODO: agregar código de constructor aquí
-			//
+
 		}
 
 	protected:
@@ -82,7 +81,7 @@ namespace ProyectoVerticalFarmsView {
 		/// <summary>
 		/// Variable del diseñador necesaria.
 		/// </summary>
-		System::ComponentModel::Container ^components;
+		System::ComponentModel::Container^ components;
 
 #pragma region Windows Form Designer generated code
 		/// <summary>
@@ -423,6 +422,7 @@ namespace ProyectoVerticalFarmsView {
 			this->button2->TabIndex = 10;
 			this->button2->Text = L"Cancelar";
 			this->button2->UseVisualStyleBackColor = true;
+			this->button2->Click += gcnew System::EventHandler(this, &frmRegistroUsuario::button2_Click);
 			// 
 			// frmRegistroUsuario
 			// 
@@ -436,7 +436,7 @@ namespace ProyectoVerticalFarmsView {
 			this->Controls->Add(this->groupBox2);
 			this->Controls->Add(this->groupBox1);
 			this->Name = L"frmRegistroUsuario";
-			this->Text = L"frmRegistroUsuario";
+			this->Text = L"Registro Usuario";
 			this->groupBox1->ResumeLayout(false);
 			this->groupBox1->PerformLayout();
 			this->groupBox2->ResumeLayout(false);
@@ -451,31 +451,68 @@ namespace ProyectoVerticalFarmsView {
 	}
 	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
 
-		//llenado de datos...
-	////FALTA HACER EL REGISTRO DE DATOS Y SU VALIDACION
-		int codigo = this->objGestorUsuario->cantidadUsuarios();
-		
-		//Es admin?
+		int codigo = this->objGestorUsuario->cantidadUsuarios() + 1;
+		String^ nombres = this->textBox1->Text;
+		String^ apellidoPaterno = this->textBox2->Text;
+		String^ apellidoMaterno = this->textBox3->Text;
+		String^ dni = this->textBox4->Text;
+		String^ numCelular = this->textBox5->Text;
+		String^ correo = this->textBox9->Text;
+		String^ fechaIngreso = this->textBox6->Text;
+		String^ genero = this->textBox7->Text;
+		String^ anioNacimiento = this->textBox8->Text;
 
+		String^ contrasena = this->textBox10->Text;
+		String^ contrasenaRepetida = this->textBox11->Text;
+		String^ palabraClave = this->textBox12->Text;
+		String^ admin;
+		
 		if (this->checkBox1->CheckState == CheckState::Checked) {
-			bool admin = true;
+			admin = "True";
 		}
-		else if (this->checkBox2->CheckState == CheckState::Checked) {
-			bool admin = false;
+		else {
+			if (this->checkBox2->CheckState == CheckState::Checked) {
+				admin = "False";
+			}
+			else {
+				admin = "True";
+			}
 		}
-		/*
 		
 		
-		SEGUIR EXTRAYENDO LOS DATOS
-		
-		
-		*/
+		if (contrasena == contrasenaRepetida) {
+			Usuario^ usuario = gcnew Usuario(codigo,
+				nombres,
+				apellidoPaterno,
+				apellidoMaterno,
+				dni,
+				correo,
+				numCelular,
+				fechaIngreso,
+				genero,
+				anioNacimiento,
+				admin,
+				contrasena,
+				palabraClave
+			);
+			this->objGestorUsuario->registrarUsuario(usuario);
+			this->objGestorUsuario->guardarDatosUsuario();
 
-		// DESPUES DE HABER VALIDADO
+			MessageBox::Show("HA SIDO REGISTRADO EXITOSAMENTE");
 
-		MessageBox::Show("HA SIDO REGISTRADO EXITOSAMENTE");
-		///
+			this->Close();
+		}
+		else
+		{
+			MessageBox::Show("No coinciden las contraseñas, vuelva a intentarlo");
+		}
 
+		
+
+
+	}
+	private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
+		this->Close();
 	}
 };
 }

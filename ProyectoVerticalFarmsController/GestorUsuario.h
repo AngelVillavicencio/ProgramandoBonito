@@ -18,9 +18,13 @@ namespace ProyectoVerticalFarmsController
 		bool validarUsuario(String^ correo,String^ contrasena);
 		Usuario^ ObtenerUsuarioXindice(int indice);
 		int cantidadUsuarios();
+		void registrarUsuario(Usuario^ usuario);
 		// DESPUES BORRAMOS MI FUNCION "CargarUsuario""" ....
 		void cargarDatosUsuario();
 		void guardarDatosUsuario();
+		Usuario^ verUsuarioDeListaXIndice(int indice);
+		void serializar();
+		void deserializar();
 	};
 
 

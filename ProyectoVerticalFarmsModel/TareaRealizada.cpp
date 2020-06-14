@@ -1,12 +1,12 @@
 #include "TareaRealizada.h"
 using namespace ProyectoVerticalFarmsModel;
-TareaRealizada::TareaRealizada(String^ tarea, float anio, float mes, float dia, float hora, float minuto, float segundo)
+
+
+TareaRealizada::TareaRealizada(long temp, DateTime^ fecha, String^ Agua, String^ Iluminacion, String^ Ventilador)
 {
-	this->anio = anio;
-	this->mes = mes;
-	this->dia = dia;
-	this->hora = hora;
-	this->minuto = minuto;
-	this->segundo = segundo;
-	this->tarea = tarea;
+	this->temp = temp;
+	this->fecha = fecha;
+	this->Agua = Agua;
+	this->Iluminacion = Iluminacion;
+	this->Ventilador = Ventilador;
 }

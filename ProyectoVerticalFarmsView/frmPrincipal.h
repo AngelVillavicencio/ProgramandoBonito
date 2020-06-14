@@ -1,6 +1,7 @@
 #pragma once
 #include "frmPaginaPrincipal.h"
 #include "frmRegistroUsuario.h"
+#include "frmRecuperarContrasena.h"
 namespace ProyectoVerticalFarmsView {
 
 	using namespace System;
@@ -10,6 +11,8 @@ namespace ProyectoVerticalFarmsView {
 	using namespace System::Data;
 	using namespace System::Drawing;
 	using namespace System::Runtime::InteropServices;
+	using namespace ProyectoVerticalFarmsController;
+	using namespace ProyectoVerticalFarmsModel;
 	/// <summary>
 	/// Resumen de frmPrincipal
 	/// </summary>
@@ -52,7 +55,7 @@ namespace ProyectoVerticalFarmsView {
 
 	private: System::Windows::Forms::TextBox^ textBox2;
 
-	private: System::Windows::Forms::Label^ label6;
+
 	private: System::Windows::Forms::PictureBox^ minimizar;
 	private: System::Windows::Forms::PictureBox^ Agrandar;
 
@@ -83,7 +86,6 @@ namespace ProyectoVerticalFarmsView {
 			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(frmPrincipal::typeid));
 			this->barratitulo = (gcnew System::Windows::Forms::Panel());
 			this->Restaurar = (gcnew System::Windows::Forms::PictureBox());
-			this->label6 = (gcnew System::Windows::Forms::Label());
 			this->minimizar = (gcnew System::Windows::Forms::PictureBox());
 			this->Agrandar = (gcnew System::Windows::Forms::PictureBox());
 			this->buttonSalir = (gcnew System::Windows::Forms::PictureBox());
@@ -115,9 +117,9 @@ namespace ProyectoVerticalFarmsView {
 			// 
 			// barratitulo
 			// 
-			this->barratitulo->BackColor = System::Drawing::Color::Orange;
+			this->barratitulo->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(150)),
+				static_cast<System::Int32>(static_cast<System::Byte>(0)));
 			this->barratitulo->Controls->Add(this->Restaurar);
-			this->barratitulo->Controls->Add(this->label6);
 			this->barratitulo->Controls->Add(this->minimizar);
 			this->barratitulo->Controls->Add(this->Agrandar);
 			this->barratitulo->Controls->Add(this->buttonSalir);
@@ -144,17 +146,6 @@ namespace ProyectoVerticalFarmsView {
 			this->Restaurar->Visible = false;
 			this->Restaurar->Click += gcnew System::EventHandler(this, &frmPrincipal::Restaurar_Click);
 			// 
-			// label6
-			// 
-			this->label6->AutoSize = true;
-			this->label6->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->label6->Location = System::Drawing::Point(15, -2);
-			this->label6->Name = L"label6";
-			this->label6->Size = System::Drawing::Size(157, 25);
-			this->label6->TabIndex = 7;
-			this->label6->Text = L"Mundo Vegetal";
-			// 
 			// minimizar
 			// 
 			this->minimizar->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Right));
@@ -172,11 +163,14 @@ namespace ProyectoVerticalFarmsView {
 			// Agrandar
 			// 
 			this->Agrandar->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Right));
-			this->Agrandar->BackColor = System::Drawing::Color::DarkOrange;
+			this->Agrandar->BackColor = System::Drawing::Color::Transparent;
+			this->Agrandar->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"Agrandar.BackgroundImage")));
 			this->Agrandar->Cursor = System::Windows::Forms::Cursors::Default;
+			this->Agrandar->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"Agrandar.Image")));
 			this->Agrandar->Location = System::Drawing::Point(1241, 0);
 			this->Agrandar->Name = L"Agrandar";
 			this->Agrandar->Size = System::Drawing::Size(25, 25);
+			this->Agrandar->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
 			this->Agrandar->TabIndex = 4;
 			this->Agrandar->TabStop = false;
 			this->Agrandar->Click += gcnew System::EventHandler(this, &frmPrincipal::pictureBox1_Click);
@@ -208,8 +202,7 @@ namespace ProyectoVerticalFarmsView {
 			// 
 			// panel1
 			// 
-			this->panel1->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(204)),
-				static_cast<System::Int32>(static_cast<System::Byte>(0)));
+			this->panel1->BackColor = System::Drawing::Color::Green;
 			this->panel1->Controls->Add(this->label2);
 			this->panel1->Controls->Add(this->button1);
 			this->panel1->Controls->Add(this->label1);
@@ -280,11 +273,12 @@ namespace ProyectoVerticalFarmsView {
 			this->linkLabel1->TabIndex = 5;
 			this->linkLabel1->TabStop = true;
 			this->linkLabel1->Text = L"¿Olvidaste tu contraseña\?";
+			this->linkLabel1->LinkClicked += gcnew System::Windows::Forms::LinkLabelLinkClickedEventHandler(this, &frmPrincipal::linkLabel1_LinkClicked);
 			// 
 			// panel3
 			// 
 			this->panel3->AutoSize = true;
-			this->panel3->BackColor = System::Drawing::Color::White;
+			this->panel3->BackColor = System::Drawing::SystemColors::Window;
 			this->panel3->Controls->Add(this->label5);
 			this->panel3->Controls->Add(this->label4);
 			this->panel3->Controls->Add(this->button2);
@@ -364,6 +358,7 @@ namespace ProyectoVerticalFarmsView {
 				static_cast<System::Int32>(static_cast<System::Byte>(186)));
 			this->textBox2->Location = System::Drawing::Point(281, 282);
 			this->textBox2->Name = L"textBox2";
+			this->textBox2->PasswordChar = '*';
 			this->textBox2->Size = System::Drawing::Size(313, 19);
 			this->textBox2->TabIndex = 8;
 			// 
@@ -414,9 +409,9 @@ namespace ProyectoVerticalFarmsView {
 			this->Name = L"frmPrincipal";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"frmPrincipal";
+			this->FormClosing += gcnew System::Windows::Forms::FormClosingEventHandler(this, &frmPrincipal::frmPrincipal_FormClosing);
 			this->Load += gcnew System::EventHandler(this, &frmPrincipal::frmPrincipal_Load);
 			this->barratitulo->ResumeLayout(false);
-			this->barratitulo->PerformLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Restaurar))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->minimizar))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Agrandar))->EndInit();
@@ -457,10 +452,10 @@ private: System::Void buttonSalir_MouseUp(System::Object^ sender, System::Window
 
 }
 private: System::Void buttonSalir_MouseEnter(System::Object^ sender, System::EventArgs^ e) {
-	this->buttonSalir->BackColor = Color::Red;
+	this->buttonSalir->BackColor = Color::Green;
 }
 private: System::Void buttonSalir_MouseLeave(System::Object^ sender, System::EventArgs^ e) {
-	this->buttonSalir->BackColor = Color::Blue;
+	this->buttonSalir->BackColor = Color::Transparent;
 }
 private: System::Void textBox1_MouseEnter(System::Object^ sender, System::EventArgs^ e) {
 	this->textBox1->BackColor = Color::CadetBlue;
@@ -506,9 +501,19 @@ private: System::Void button2_Click_1(System::Object^ sender, System::EventArgs^
 	String^ correo = this->textBox1->Text;
 	String^ contrasena = this->textBox2->Text;
 	if (this->objGestorUsuario->validarUsuario(correo, contrasena)) {
-		frmPaginaPrincipal^ Page = gcnew frmPaginaPrincipal();
-		this->Hide();
-		Page->Show();
+
+		//VALIDATION SI ES USUARIO ES ADMIN
+		//if (objGestorUsuario->ESadmin()) {
+			frmPaginaPrincipal^ Page = gcnew frmPaginaPrincipal(this->objGestorUsuario);
+			this->Hide();
+			Page->Show();
+		///}
+		/*else {
+			frmPaginaPrincipal^ Page = gcnew frmPaginaPrincipal();
+			this->Hide();
+			Page->Show();
+		*/
+		
 		
 		
 	}
@@ -519,7 +524,8 @@ private: System::Void button2_Click_1(System::Object^ sender, System::EventArgs^
 	
 }
 private: System::Void frmPrincipal_Load(System::Object^ sender, System::EventArgs^ e) {
-	this->objGestorUsuario->CargarUsuarios();
+	this->objGestorUsuario->deserializar();
+	//this->objGestorUsuario->cargarDatosUsuario();
 }
 private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
 
@@ -527,6 +533,18 @@ private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e
 	frmRegistroUsuario^ PaginaRegistro = gcnew frmRegistroUsuario(this->objGestorUsuario);
 	PaginaRegistro->Show();
 
+}
+private: System::Void frmPrincipal_FormClosing(System::Object^ sender, System::Windows::Forms::FormClosingEventArgs^ e) {
+
+	this->objGestorUsuario->serializar();
+	//this->objGestorUsuario->guardarDatosUsuario();
+
+}
+private: System::Void linkLabel1_LinkClicked(System::Object^ sender, System::Windows::Forms::LinkLabelLinkClickedEventArgs^ e) {
+
+
+	frmRecuperarContrasena^ RecuperarContrasena = gcnew frmRecuperarContrasena(this->objGestorUsuario);
+	RecuperarContrasena->Show();
 }
 };
 }

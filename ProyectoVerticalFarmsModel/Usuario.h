@@ -5,6 +5,7 @@ namespace ProyectoVerticalFarmsModel
 {		
 	using namespace System;
 	using namespace System::Collections::Generic;
+	[Serializable]
 	public ref class Usuario
 	{
 	private:
@@ -20,7 +21,7 @@ namespace ProyectoVerticalFarmsModel
 		String^ anioNacimiento;
 		String^ contrasena;
 		String^ palabraClave;
-		bool esAdmin;
+		String^ esAdmin;
 		List<Estacion^>^ listaStation;
 	public:
 		Usuario(int id, String^ nombres, String^ apellidoPaterno, String^ apellidoMaterno, String^ dni,
@@ -29,7 +30,8 @@ namespace ProyectoVerticalFarmsModel
 			String^ fechaIngreso,
 			String^ Genero,
 			String^ anioNacimiento,
-			bool esAdmin,String^ contrasena, String^ palabraClave);
+			String^ esAdmin,
+			String^ contrasena, String^ palabraClave);
 		Usuario(String^ correo, String^ contrasena, String^ palabraClave);
 		
 		
@@ -44,7 +46,7 @@ namespace ProyectoVerticalFarmsModel
 		String^ getFechaIngreso();
 		String^ getGenero();
 		String^ getAnioNacimiento();
-		bool getEsAdmin();
+		String^ getEsAdmin();
 		String^ getContrasena();
 		String^ getPalabraClave();
 	};

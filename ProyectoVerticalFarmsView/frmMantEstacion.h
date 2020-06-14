@@ -94,22 +94,22 @@ namespace ProyectoVerticalFarmsView {
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
 			this->dataGridView1 = (gcnew System::Windows::Forms::DataGridView());
-			this->encargado = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->descripcion = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->Camaras = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->Nombre = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->codigo = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->Nombre = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->Camaras = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->descripcion = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->encargado = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->button1 = (gcnew System::Windows::Forms::Button());
 			this->button2 = (gcnew System::Windows::Forms::Button());
 			this->button3 = (gcnew System::Windows::Forms::Button());
 			this->button4 = (gcnew System::Windows::Forms::Button());
 			this->panel1 = (gcnew System::Windows::Forms::Panel());
-			this->panel2 = (gcnew System::Windows::Forms::Panel());
 			this->panel3 = (gcnew System::Windows::Forms::Panel());
+			this->panel2 = (gcnew System::Windows::Forms::Panel());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
 			this->panel1->SuspendLayout();
-			this->panel2->SuspendLayout();
 			this->panel3->SuspendLayout();
+			this->panel2->SuspendLayout();
 			this->SuspendLayout();
 			// 
 			// label1
@@ -146,23 +146,11 @@ namespace ProyectoVerticalFarmsView {
 			this->dataGridView1->Size = System::Drawing::Size(688, 257);
 			this->dataGridView1->TabIndex = 8;
 			// 
-			// encargado
+			// codigo
 			// 
-			this->encargado->AutoSizeMode = System::Windows::Forms::DataGridViewAutoSizeColumnMode::Fill;
-			this->encargado->HeaderText = L"Descripción";
-			this->encargado->Name = L"encargado";
-			// 
-			// descripcion
-			// 
-			this->descripcion->AutoSizeMode = System::Windows::Forms::DataGridViewAutoSizeColumnMode::Fill;
-			this->descripcion->HeaderText = L"Encargado";
-			this->descripcion->Name = L"descripcion";
-			// 
-			// Camaras
-			// 
-			this->Camaras->AutoSizeMode = System::Windows::Forms::DataGridViewAutoSizeColumnMode::Fill;
-			this->Camaras->HeaderText = L"Cantidad de Camaras de Crecimiento";
-			this->Camaras->Name = L"Camaras";
+			this->codigo->AutoSizeMode = System::Windows::Forms::DataGridViewAutoSizeColumnMode::Fill;
+			this->codigo->HeaderText = L"Código";
+			this->codigo->Name = L"codigo";
 			// 
 			// Nombre
 			// 
@@ -170,11 +158,23 @@ namespace ProyectoVerticalFarmsView {
 			this->Nombre->HeaderText = L"Nombre";
 			this->Nombre->Name = L"Nombre";
 			// 
-			// codigo
+			// Camaras
 			// 
-			this->codigo->AutoSizeMode = System::Windows::Forms::DataGridViewAutoSizeColumnMode::Fill;
-			this->codigo->HeaderText = L"Código";
-			this->codigo->Name = L"codigo";
+			this->Camaras->AutoSizeMode = System::Windows::Forms::DataGridViewAutoSizeColumnMode::Fill;
+			this->Camaras->HeaderText = L"Cantidad de Camaras de Crecimiento";
+			this->Camaras->Name = L"Camaras";
+			// 
+			// descripcion
+			// 
+			this->descripcion->AutoSizeMode = System::Windows::Forms::DataGridViewAutoSizeColumnMode::Fill;
+			this->descripcion->HeaderText = L"Encargado";
+			this->descripcion->Name = L"descripcion";
+			// 
+			// encargado
+			// 
+			this->encargado->AutoSizeMode = System::Windows::Forms::DataGridViewAutoSizeColumnMode::Fill;
+			this->encargado->HeaderText = L"Descripción";
+			this->encargado->Name = L"encargado";
 			// 
 			// button1
 			// 
@@ -238,6 +238,18 @@ namespace ProyectoVerticalFarmsView {
 			this->panel1->Size = System::Drawing::Size(884, 520);
 			this->panel1->TabIndex = 13;
 			// 
+			// panel3
+			// 
+			this->panel3->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Left)
+				| System::Windows::Forms::AnchorStyles::Right));
+			this->panel3->Controls->Add(this->button1);
+			this->panel3->Controls->Add(this->textBox1);
+			this->panel3->Controls->Add(this->label1);
+			this->panel3->Location = System::Drawing::Point(117, 12);
+			this->panel3->Name = L"panel3";
+			this->panel3->Size = System::Drawing::Size(508, 49);
+			this->panel3->TabIndex = 14;
+			// 
 			// panel2
 			// 
 			this->panel2->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Left)
@@ -250,18 +262,6 @@ namespace ProyectoVerticalFarmsView {
 			this->panel2->Size = System::Drawing::Size(637, 74);
 			this->panel2->TabIndex = 13;
 			// 
-			// panel3
-			// 
-			this->panel3->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Left)
-				| System::Windows::Forms::AnchorStyles::Right));
-			this->panel3->Controls->Add(this->button1);
-			this->panel3->Controls->Add(this->textBox1);
-			this->panel3->Controls->Add(this->label1);
-			this->panel3->Location = System::Drawing::Point(120, 15);
-			this->panel3->Name = L"panel3";
-			this->panel3->Size = System::Drawing::Size(508, 49);
-			this->panel3->TabIndex = 14;
-			// 
 			// frmMantEstacion
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
@@ -270,15 +270,15 @@ namespace ProyectoVerticalFarmsView {
 			this->ClientSize = System::Drawing::Size(884, 520);
 			this->Controls->Add(this->panel1);
 			this->Name = L"frmMantEstacion";
-			this->Text = L"frmMantEstacion";
+			this->Text = L"Mantenimiento de Estación";
 			this->FormClosing += gcnew System::Windows::Forms::FormClosingEventHandler(this, &frmMantEstacion::frmMantEstacion_FormClosing);
 			this->Load += gcnew System::EventHandler(this, &frmMantEstacion::frmMantEstacion_Load);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->EndInit();
 			this->panel1->ResumeLayout(false);
-			this->panel2->ResumeLayout(false);
-			this->panel2->PerformLayout();
 			this->panel3->ResumeLayout(false);
 			this->panel3->PerformLayout();
+			this->panel2->ResumeLayout(false);
+			this->panel2->PerformLayout();
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
@@ -350,13 +350,20 @@ private:void cargarVentana() {
 		{
 			
 			int indice = this->dataGridView1->SelectedRows[0]->Index;
+			
+			/*    */
+			int codigo = Convert::ToInt32(this->dataGridView1->Rows[indice]->Cells[0]->Value);
+
+
+
 			if (this->dataGridView1->Rows[indice]->Cells[0]->Value == nullptr)
 			{
 				MessageBox::Show("Seleccione fila VALIDA");
 			}
 			else
 			{
-				frmEditarEstacion^ VentanaEditarEstacion = gcnew frmEditarEstacion(this->objGestorEstacion, indice);
+
+				frmEditarEstacion^ VentanaEditarEstacion = gcnew frmEditarEstacion(this->objGestorEstacion, this->objGestorEstacion->buscaIndiceCamaraCrecimientoXid(codigo));
 				VentanaEditarEstacion->ShowDialog();
 				cargarGrilla();
 				cargarVentana();
@@ -381,13 +388,15 @@ private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e
 		{
 
 			int indice = this->dataGridView1->SelectedRows[0]->Index;
+			int codigo = Convert::ToInt32(this->dataGridView1->Rows[indice]->Cells[0]->Value);
+
 			if (this->dataGridView1->Rows[indice]->Cells[0]->Value == nullptr)
 			{
 				MessageBox::Show("Seleccione fila VALIDA");
 			}
 			else
 			{
-				this->objGestorEstacion->eliminarEstacion(indice);
+				this->objGestorEstacion->eliminarEstacionXcodigo(codigo);
 				cargarGrilla();
 				cargarVentana();
 			}
@@ -414,7 +423,7 @@ private:void cargarGrillaConEstacionEncontradas(GestorEstacion^ listaEncontrada)
 	   private: bool ValidarId(String^ id) {
 		   bool num = false;
 		   int i = 0;
-		   if (id == nullptr) {
+		   if (id == "") {
 			   return false;
 		   }
 		   else {
@@ -441,7 +450,7 @@ private: System::Void button1_Click_1(System::Object^ sender, System::EventArgs^
 
 	Estacion^ objestacionAevaluar = gcnew Estacion();
 	bool encontre = false;
-	if (this->textBox1->Text == nullptr) {
+	if (this->textBox1->Text == "") {
 
 		cargarGrilla();
 		MessageBox::Show("Escribe el codigo");
@@ -465,7 +474,7 @@ private: System::Void button1_Click_1(System::Object^ sender, System::EventArgs^
 				}
 
 			}
-			if (encontre = true) {
+			if (encontre == true) {
 				GestorEstacion^ listaEncontrada = gcnew GestorEstacion();
 				listaEncontrada->agregarEstacion(objestacionAevaluar);
 				cargarGrillaConEstacionEncontradas(listaEncontrada);

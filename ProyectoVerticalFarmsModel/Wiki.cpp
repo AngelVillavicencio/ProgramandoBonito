@@ -10,7 +10,7 @@ Wiki::Wiki()
 	this->cantidadCO2 = 0;
 	this->volumenNutrientes = 0;
 }
-Wiki::Wiki(String^ tipoVegetal, float temperaturaAdecuada, Iluminacion^ iluminacion, float humedadAdecuada, float cantidadCO2, float volumenNutrientes)
+Wiki::Wiki(String^ tipoVegetal, float temperaturaAdecuada, String^ iluminacion, float humedadAdecuada, float cantidadCO2, float volumenNutrientes)
 {
 	this->tipoVegetal = tipoVegetal;
 	this->temperaturaAdecuada = temperaturaAdecuada;

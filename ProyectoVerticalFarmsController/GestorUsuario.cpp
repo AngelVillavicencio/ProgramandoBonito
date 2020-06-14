@@ -1,10 +1,12 @@
 #include "GestorUsuario.h"
 using namespace ProyectoVerticalFarmsController;
-
+using namespace System::IO;
+using namespace System::Runtime::Serialization;
+using namespace System::Runtime::Serialization::Formatters::Binary;
 
 GestorUsuario::GestorUsuario() 
 {
-	this->listaUsuario = gcnew List<Usuario^>;
+	this->listaUsuario = gcnew List<Usuario^>();
 }
 
 void GestorUsuario::CargarUsuarios()
@@ -56,6 +58,10 @@ int GestorUsuario::cantidadUsuarios()
 {
 	return this->listaUsuario->Count;
 }
+void ProyectoVerticalFarmsController::GestorUsuario::registrarUsuario(Usuario^ usuario)
+{
+	this->listaUsuario->Add(usuario);
+}
 void GestorUsuario::cargarDatosUsuario()
 {
 	this->listaUsuario->Clear();
@@ -74,7 +80,7 @@ void GestorUsuario::cargarDatosUsuario()
 		String^ fechaIngreso = palabras[7];
 		String^ genero = palabras[8];
 		String^ anioNacimiento = palabras[9];
-		bool esAdmin = Convert::ToBoolean(palabras[10]);
+		String^ esAdmin= palabras[10];
 		String^ contrasena = palabras[11];
 		String^ palabraClave = palabras[12];
 		Usuario^ objUsuario = gcnew Usuario(id, nombres, apellidoPaterno, apellidoMaterno, dni, correo, numCelular, fechaIngreso, genero, anioNacimiento, esAdmin, contrasena, palabraClave);
@@ -87,8 +93,31 @@ void GestorUsuario::guardarDatosUsuario()
 	for (int i = 0; i < this->listaUsuario->Count; i++)
 	{
 		Usuario^ objUsuario = this->listaUsuario[i];
-		String^ palabras = objUsuario->getId() + ";" + objUsuario->getNombres() + ";" + objUsuario->getApellidoPaterno() + ";" + objUsuario->getApellidoMaterno() + ";" + objUsuario->getDni() + ";" + objUsuario->getCorreo() + ";" + objUsuario->getNumCelular() + ";" + objUsuario->getApellidoPaterno() + ";" + objUsuario->getFechaIngreso() + ";" + objUsuario->getGenero() + ";" + objUsuario->getAnioNacimiento() + ";" + objUsuario->getEsAdmin()+";" +objUsuario->getContrasena()+";"+objUsuario->getPalabraClave();
+		String^ palabras = objUsuario->getId() + ";" + objUsuario->getNombres() + ";" + objUsuario->getApellidoPaterno() + ";" + objUsuario->getApellidoMaterno() + ";" + objUsuario->getDni() + ";" + objUsuario->getCorreo() + ";" + objUsuario->getNumCelular() + ";" + objUsuario->getFechaIngreso() + ";" + objUsuario->getGenero() + ";" + objUsuario->getAnioNacimiento() + ";" + objUsuario->getEsAdmin() + ";" + objUsuario->getContrasena() + ";" + objUsuario->getPalabraClave();
 		lineas[i] = palabras;
 	}
-	File::WriteAllLines("usuarios.txt", lineas);
+	File::WriteAllLines("Usuarios.txt", lineas);
+}
+
+Usuario^ ProyectoVerticalFarmsController::GestorUsuario::verUsuarioDeListaXIndice(int indice)
+{
+	return this->listaUsuario[indice];
+}
+
+void GestorUsuario::serializar()
+{
+	Stream^ stream = File::Open("usuarios.bin", FileMode::Create);
+	BinaryFormatter^ bin = gcnew BinaryFormatter();
+	bin->Serialize(stream, this->listaUsuario);
+	stream->Close();
+
+
+}
+
+void GestorUsuario::deserializar()
+{
+	Stream^ stream = File::Open("usuarios.bin", FileMode::Open);
+	BinaryFormatter^ bin = gcnew BinaryFormatter();
+	this->listaUsuario = dynamic_cast<List<Usuario^>^>(bin->Deserialize(stream));
+	stream->Close();
 }

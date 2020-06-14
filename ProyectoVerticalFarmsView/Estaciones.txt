@@ -1,11 +1,6 @@
-20171781+Estacion de Lechugas +0+Jose+Se est� plantando lechugas hidroponicas ya por unas 2 semanas
-20171791+Estacion de ajos+0+Darien+Se est� plantando lechugas hidroponicas ya por unas 2 semanas
-20171820+Estacion de PAPAS+0+Angel+Se est� plantando lechugas hidroponicas ya por unas 2 semanas
-20171831+Estacion de SOPAS+0+SUSANA+ ya est�n listas...
-20171841+Estacion de Pepino+0+Darienhvhgkjgjjkjkj+Se est� plantando lechugas hidroponicas ya por unas 2 semanas
-20171851+Estacion de zapallos+0+ANGEL ARTURO VILLAVICENCIO+Se est� plantando lechugas hidroponicas ya por unas 2 semanas
-20171861+Estacion de habas+0+Darien+ya est�n listas...
-20171871+Estacion de Ajos+0+Darien+Se est� plantando lechugas hidroponicas ya por unas 2 semanas
-20171881+Estacion de Tomates+0+Abigail+Se est� plantando lechugas hidroponicas ya por unas 2 semanas
-20171891+Estacion de Mani+0+Angel+ya est�n listas...
-20171911+Estacion de Chocolate+0+Angel+Se est� plantando lechugas hidroponicas ya por unas 2 semanas
+20171791+Estacion de ajos+5+Darien+Se est� plantando lechugas hidroponicas ya por unas 2 semanas
+20171851+Estacion de zapallos+1+ANGEL ARTURO VILLAVICENCIO+Se est� plantando lechugas hidroponicas ya por unas 2 semanas
+20171861+Estacion de habas+1+Darien+ya est�n listas...
+20171871+Estacion de Ajos+1+Darien+Se est� plantando lechugas hidroponicas ya por unas 2 semanas
+1087+Estacion de Chocolate+1+Angel+Se est� plantando lechugas hidroponicas ya por unas 2 semanas
+2014+Estacion de mandarina+1+Angelote+BlaBlaBlaBlaBlaBlaBlaBla

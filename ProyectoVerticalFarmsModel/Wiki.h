@@ -1,5 +1,5 @@
 #pragma once
-#include "Iluminacion.h"
+
 namespace ProyectoVerticalFarmsModel
 {
 	using namespace System;
@@ -9,14 +9,14 @@ namespace ProyectoVerticalFarmsModel
 	private:
 		String^ tipoVegetal;
 		float temperaturaAdecuada;
-		Iluminacion^ iluminacion;
+		String^ iluminacion;
 		float humedadAdecuada;
 		float cantidadCO2;
 		float volumenNutrientes;
 
 	public:
 		Wiki();
-		Wiki(String^ tipoVegetal, float temperaturaAdecuada, Iluminacion^ iluminacion, float humedadAdecuada, float cantidadCO2, float volumenNutrientes);
+		Wiki(String^ tipoVegetal, float temperaturaAdecuada, String^ iluminacion, float humedadAdecuada, float cantidadCO2, float volumenNutrientes);
 
 	};
 

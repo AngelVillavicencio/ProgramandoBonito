@@ -5,6 +5,7 @@ namespace ProyectoVerticalFarmsModel
 {
 	using namespace System;
 	using namespace System::Collections::Generic;
+	[Serializable]
 	public ref class Estacion
 	{
 	private:
@@ -23,6 +24,12 @@ namespace ProyectoVerticalFarmsModel
 		String^ getDescripcion();
 		String^ getEncargado();
 		int getCantidadCamaras();
+		void AgregarALista(CamaraCrecimiento^ objCamaraCrecimiento);
+		CamaraCrecimiento^ getCamaraXIndice(int indice);
+		CamaraCrecimiento^ getCamaraXCodigo(int codigo);
+		int ObtenerIndiceXcodigo(int codigo);
+		void EditarCamaraXcodigo(int codigo,CamaraCrecimiento^ objCamaraCrecimiento);
+		void eliminarCamaraXcodigo(int codigo);
 	};
 
 

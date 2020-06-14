@@ -7,17 +7,19 @@ Usuario::Usuario(int id, String^ nombres, String^ apellidoPaterno, String^ apell
 	String^ fechaIngreso,
 	String^ Genero,
 	String^ anioNacimiento,
-	bool esAdmin,String^ contrasena, String^ palabraClave)
+	String^ esAdmin,
+	String^ contrasena, 
+	String^ palabraClave)
 {
 	this->id = id;
-	this->nombres;
+	this->nombres=nombres;
 	this->apellidoPaterno = apellidoPaterno;
 	this->apellidoMaterno = apellidoMaterno;
 	this->dni = dni;
 	this->correo = correo;
 	this->numCelular = numCelular;
 	this->fechaIngreso = fechaIngreso;
-	this->genero = genero;
+	this->genero = Genero;
 	this->anioNacimiento = anioNacimiento;
 	this->esAdmin = esAdmin;
 	this->listaStation = gcnew List<Estacion^>;
@@ -80,7 +82,7 @@ String^ Usuario::getAnioNacimiento()
 	return this->anioNacimiento;
 }
 
-bool Usuario::getEsAdmin()
+String^ Usuario::getEsAdmin()
 {
 	return this->esAdmin;
 }
